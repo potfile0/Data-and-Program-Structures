@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KSU.CS.CodeAnalyzers" Version="1.0.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Ksu.Cis300.Graphs">
+      <HintPath>Ksu.Cis300.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="Ksu.Cis300.MazeLibrary">
+      <HintPath>Ksu.Cis300.MazeLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

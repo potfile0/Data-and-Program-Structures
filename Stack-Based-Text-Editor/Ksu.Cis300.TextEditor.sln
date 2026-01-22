@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ksu.Cis300.TextEditor", "Ksu.Cis300.TextEditor\Ksu.Cis300.TextEditor.csproj", "{5F3DAD69-CCF6-48E5-8F60-4AF102ACBB92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ksu.Cis300.StackLibrary", "Ksu.Cis300.StackLibrary\Ksu.Cis300.StackLibrary.csproj", "{339BEC11-2D54-4F39-BF55-A342E85D1171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ksu.Cis300.StackLibrary.Tests", "Ksu.Cis300.StackLibrary.Tests\Ksu.Cis300.StackLibrary.Tests.csproj", "{7D743907-2B3B-4717-B5A2-8E3750B774A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Autograding|Any CPU = Autograding|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F3DAD69-CCF6-48E5-8F60-4AF102ACBB92}.Autograding|Any CPU.ActiveCfg = Autograding|Any CPU
+		{5F3DAD69-CCF6-48E5-8F60-4AF102ACBB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3DAD69-CCF6-48E5-8F60-4AF102ACBB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3DAD69-CCF6-48E5-8F60-4AF102ACBB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3DAD69-CCF6-48E5-8F60-4AF102ACBB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339BEC11-2D54-4F39-BF55-A342E85D1171}.Autograding|Any CPU.ActiveCfg = Autograding|Any CPU
+		{339BEC11-2D54-4F39-BF55-A342E85D1171}.Autograding|Any CPU.Build.0 = Autograding|Any CPU
+		{339BEC11-2D54-4F39-BF55-A342E85D1171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339BEC11-2D54-4F39-BF55-A342E85D1171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339BEC11-2D54-4F39-BF55-A342E85D1171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339BEC11-2D54-4F39-BF55-A342E85D1171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D743907-2B3B-4717-B5A2-8E3750B774A1}.Autograding|Any CPU.ActiveCfg = Autograding|Any CPU
+		{7D743907-2B3B-4717-B5A2-8E3750B774A1}.Autograding|Any CPU.Build.0 = Autograding|Any CPU
+		{7D743907-2B3B-4717-B5A2-8E3750B774A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D743907-2B3B-4717-B5A2-8E3750B774A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D743907-2B3B-4717-B5A2-8E3750B774A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D743907-2B3B-4717-B5A2-8E3750B774A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B99B3AB8-A818-4D7E-A011-D8D41C0011BA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Unit Tests",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/home/runner dotnet test --configuration Autograding",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}

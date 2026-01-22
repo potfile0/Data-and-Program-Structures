@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ksu.Cis300.Parentheses", "Ksu.Cis300.Parentheses\Ksu.Cis300.Parentheses.csproj", "{268AAB10-46B0-4D73-AFA1-0FB8DAAD94A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ksu.Cis300.Parentheses.Tests", "Ksu.Cis300.Parentheses.Tests\Ksu.Cis300.Parentheses.Tests.csproj", "{779B4609-FC30-4987-A685-7E39F43F7F89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{268AAB10-46B0-4D73-AFA1-0FB8DAAD94A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268AAB10-46B0-4D73-AFA1-0FB8DAAD94A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268AAB10-46B0-4D73-AFA1-0FB8DAAD94A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268AAB10-46B0-4D73-AFA1-0FB8DAAD94A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779B4609-FC30-4987-A685-7E39F43F7F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779B4609-FC30-4987-A685-7E39F43F7F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779B4609-FC30-4987-A685-7E39F43F7F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779B4609-FC30-4987-A685-7E39F43F7F89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DE962AD-652C-41AF-ADB0-CE899BF26388}
+	EndGlobalSection
+EndGlobal

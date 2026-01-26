@@ -1,6 +1,8 @@
 /* UserInterface.cs
  * Author: Josh Weese
  */
+using Microsoft.VisualBasic;
+
 namespace Ksu.Cis300.TextEditor
 {
     /// <summary>
@@ -25,7 +27,14 @@ namespace Ksu.Cis300.TextEditor
         {
             if (uxOpenDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Can't open file " + uxOpenDialog.FileName);
+                try
+                {
+                    uxEditBuffer.Text = File.ReadAllText(uxOpenDialog.FileName);
+                } catch ( Exception ex )
+                {
+                    errorMessage(ex);
+                }
+                
             }
         }
 
@@ -38,8 +47,19 @@ namespace Ksu.Cis300.TextEditor
         {
             if (uxSaveDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Can't save file " + uxSaveDialog.FileName);
+                try
+                {
+                    File.WriteAllText(uxSaveDialog.FileName, uxEditBuffer.Text);
+                }
+                catch (Exception ex)
+                {
+                    errorMessage(ex);
+                }
             }
+        }
+        private static void errorMessage(Exception ex)
+        {
+            MessageBox.Show("The following error occurred:" + ex);
         }
     }
 }

@@ -28,71 +28,70 @@ namespace Ksu.Cis300.TextEditor
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxMenuBar = new System.Windows.Forms.MenuStrip();
-            this.uxFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEditBuffer = new System.Windows.Forms.TextBox();
-            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxSaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.uxMenuBar.SuspendLayout();
-            this.SuspendLayout();
+            uxMenuBar = new MenuStrip();
+            uxFile = new ToolStripMenuItem();
+            uxOpen = new ToolStripMenuItem();
+            uxSaveAs = new ToolStripMenuItem();
+            uxEditBuffer = new TextBox();
+            uxOpenDialog = new OpenFileDialog();
+            uxSaveDialog = new SaveFileDialog();
+            uxMenuBar.SuspendLayout();
+            SuspendLayout();
             // 
             // uxMenuBar
             // 
-            this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxFile});
-            this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuBar.Name = "uxMenuBar";
-            this.uxMenuBar.Size = new System.Drawing.Size(800, 24);
-            this.uxMenuBar.TabIndex = 0;
-            this.uxMenuBar.Text = "menuStrip1";
+            uxMenuBar.Items.AddRange(new ToolStripItem[] { uxFile });
+            uxMenuBar.Location = new Point(0, 0);
+            uxMenuBar.Name = "uxMenuBar";
+            uxMenuBar.Size = new Size(800, 24);
+            uxMenuBar.TabIndex = 0;
+            uxMenuBar.Text = "menuStrip1";
             // 
             // uxFile
             // 
-            this.uxFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxOpen,
-            this.uxSaveAs});
-            this.uxFile.Name = "uxFile";
-            this.uxFile.Size = new System.Drawing.Size(37, 20);
-            this.uxFile.Text = "File";
+            uxFile.DropDownItems.AddRange(new ToolStripItem[] { uxOpen, uxSaveAs });
+            uxFile.Name = "uxFile";
+            uxFile.Size = new Size(37, 20);
+            uxFile.Text = "File";
             // 
             // uxOpen
             // 
-            this.uxOpen.Name = "uxOpen";
-            this.uxOpen.Size = new System.Drawing.Size(180, 22);
-            this.uxOpen.Text = "Open . . .";
-            this.uxOpen.Click += new System.EventHandler(this.OpenClick);
+            uxOpen.Name = "uxOpen";
+            uxOpen.Size = new Size(132, 22);
+            uxOpen.Text = "Open . . .";
+            uxOpen.Click += OpenClick;
             // 
             // uxSaveAs
             // 
-            this.uxSaveAs.Name = "uxSaveAs";
-            this.uxSaveAs.Size = new System.Drawing.Size(180, 22);
-            this.uxSaveAs.Text = "Save As . . .";
-            this.uxSaveAs.Click += new System.EventHandler(this.SaveAsClick);
+            uxSaveAs.Name = "uxSaveAs";
+            uxSaveAs.Size = new Size(132, 22);
+            uxSaveAs.Text = "Save As . . .";
+            uxSaveAs.Click += SaveAsClick;
             // 
             // uxEditBuffer
             // 
-            this.uxEditBuffer.Location = new System.Drawing.Point(12, 27);
-            this.uxEditBuffer.Multiline = true;
-            this.uxEditBuffer.Name = "uxEditBuffer";
-            this.uxEditBuffer.Size = new System.Drawing.Size(767, 411);
-            this.uxEditBuffer.TabIndex = 1;
+            uxEditBuffer.Dock = DockStyle.Fill;
+            uxEditBuffer.Location = new Point(0, 24);
+            uxEditBuffer.Multiline = true;
+            uxEditBuffer.Name = "uxEditBuffer";
+            uxEditBuffer.ScrollBars = ScrollBars.Vertical;
+            uxEditBuffer.Size = new Size(800, 426);
+            uxEditBuffer.TabIndex = 1;
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uxEditBuffer);
-            this.Controls.Add(this.uxMenuBar);
-            this.MainMenuStrip = this.uxMenuBar;
-            this.Name = "UserInterface";
-            this.Text = "Text Editor";
-            this.uxMenuBar.ResumeLayout(false);
-            this.uxMenuBar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(uxEditBuffer);
+            Controls.Add(uxMenuBar);
+            MainMenuStrip = uxMenuBar;
+            Name = "UserInterface";
+            Text = "Text Editor";
+            uxMenuBar.ResumeLayout(false);
+            uxMenuBar.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

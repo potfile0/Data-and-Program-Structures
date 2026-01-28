@@ -104,7 +104,7 @@ namespace Ksu.Cis300.TextEditor
         /// </summary>
         /// <param name="c">gives the character to check</param>
         /// <param name="firstLetter">gives the first letter of the alphabet</param>
-        /// <returns></returns>
+        /// <returns>returns a boolean on wether the first letter is in there or not</returns>
         private static bool Checker(char c, char firstLetter)
         {
             char lastLetter = (char)(firstLetter + _alphabetLength - 1);
@@ -115,7 +115,7 @@ namespace Ksu.Cis300.TextEditor
         /// encrypts a single character
         /// </summary>
         /// <param name="c">gives the character to encrypt</param>
-        /// <returns></returns>
+        /// <returns>encrypts the given character</returns>
         private static char Encrypt(char c)
         {
             if (Checker(c, _lowerCaseStart))

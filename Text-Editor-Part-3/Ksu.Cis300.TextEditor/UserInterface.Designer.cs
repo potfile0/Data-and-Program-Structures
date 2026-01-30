@@ -28,101 +28,124 @@ namespace Ksu.Cis300.TextEditor
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxMenuBar = new System.Windows.Forms.MenuStrip();
-            this.uxFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEncrypt = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEncryptWithString = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEncryptWithStringBuilder = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEditBuffer = new System.Windows.Forms.TextBox();
-            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxSaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.uxMenuBar.SuspendLayout();
-            this.SuspendLayout();
+            uxMenuBar = new MenuStrip();
+            uxFile = new ToolStripMenuItem();
+            uxOpen = new ToolStripMenuItem();
+            uxSaveAs = new ToolStripMenuItem();
+            uxEncrypt = new ToolStripMenuItem();
+            uxEncryptWithString = new ToolStripMenuItem();
+            uxEncryptWithStringBuilder = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            undoToolStripMenuItem = new ToolStripMenuItem();
+            redoToolStripMenuItem = new ToolStripMenuItem();
+            uxEditBuffer = new TextBox();
+            uxOpenDialog = new OpenFileDialog();
+            uxSaveDialog = new SaveFileDialog();
+            uxMenuBar.SuspendLayout();
+            SuspendLayout();
             // 
             // uxMenuBar
             // 
-            this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxFile,
-            this.uxEncrypt});
-            this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuBar.Name = "uxMenuBar";
-            this.uxMenuBar.Size = new System.Drawing.Size(800, 24);
-            this.uxMenuBar.TabIndex = 0;
-            this.uxMenuBar.Text = "menuStrip1";
+            uxMenuBar.Items.AddRange(new ToolStripItem[] { uxFile, uxEncrypt, editToolStripMenuItem });
+            uxMenuBar.Location = new Point(0, 0);
+            uxMenuBar.Name = "uxMenuBar";
+            uxMenuBar.Size = new Size(800, 24);
+            uxMenuBar.TabIndex = 0;
+            uxMenuBar.Text = "menuStrip1";
             // 
             // uxFile
             // 
-            this.uxFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxOpen,
-            this.uxSaveAs});
-            this.uxFile.Name = "uxFile";
-            this.uxFile.Size = new System.Drawing.Size(37, 20);
-            this.uxFile.Text = "File";
+            uxFile.DropDownItems.AddRange(new ToolStripItem[] { uxOpen, uxSaveAs });
+            uxFile.Name = "uxFile";
+            uxFile.Size = new Size(37, 20);
+            uxFile.Text = "File";
             // 
             // uxOpen
             // 
-            this.uxOpen.Name = "uxOpen";
-            this.uxOpen.Size = new System.Drawing.Size(132, 22);
-            this.uxOpen.Text = "Open . . .";
-            this.uxOpen.Click += new System.EventHandler(this.OpenClick);
+            uxOpen.Name = "uxOpen";
+            uxOpen.Size = new Size(132, 22);
+            uxOpen.Text = "Open . . .";
+            uxOpen.Click += OpenClick;
             // 
             // uxSaveAs
             // 
-            this.uxSaveAs.Name = "uxSaveAs";
-            this.uxSaveAs.Size = new System.Drawing.Size(132, 22);
-            this.uxSaveAs.Text = "Save As . . .";
-            this.uxSaveAs.Click += new System.EventHandler(this.SaveAsClick);
+            uxSaveAs.Name = "uxSaveAs";
+            uxSaveAs.Size = new Size(132, 22);
+            uxSaveAs.Text = "Save As . . .";
+            uxSaveAs.Click += SaveAsClick;
             // 
             // uxEncrypt
             // 
-            this.uxEncrypt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxEncryptWithString,
-            this.uxEncryptWithStringBuilder});
-            this.uxEncrypt.Name = "uxEncrypt";
-            this.uxEncrypt.Size = new System.Drawing.Size(59, 20);
-            this.uxEncrypt.Text = "Encrypt";
+            uxEncrypt.DropDownItems.AddRange(new ToolStripItem[] { uxEncryptWithString, uxEncryptWithStringBuilder });
+            uxEncrypt.Name = "uxEncrypt";
+            uxEncrypt.Size = new Size(59, 20);
+            uxEncrypt.Text = "Encrypt";
             // 
             // uxEncryptWithString
             // 
-            this.uxEncryptWithString.Name = "uxEncryptWithString";
-            this.uxEncryptWithString.Size = new System.Drawing.Size(180, 22);
-            this.uxEncryptWithString.Text = "With String";
-            this.uxEncryptWithString.Click += new System.EventHandler(this.EncryptWithStringClick);
+            uxEncryptWithString.Name = "uxEncryptWithString";
+            uxEncryptWithString.Size = new Size(170, 22);
+            uxEncryptWithString.Text = "With String";
+            uxEncryptWithString.Click += EncryptWithStringClick;
             // 
             // uxEncryptWithStringBuilder
             // 
-            this.uxEncryptWithStringBuilder.Name = "uxEncryptWithStringBuilder";
-            this.uxEncryptWithStringBuilder.Size = new System.Drawing.Size(180, 22);
-            this.uxEncryptWithStringBuilder.Text = "With StringBuilder";
-            this.uxEncryptWithStringBuilder.Click += new System.EventHandler(this.EncryptWithStringBuilderClick);
+            uxEncryptWithStringBuilder.Name = "uxEncryptWithStringBuilder";
+            uxEncryptWithStringBuilder.Size = new Size(170, 22);
+            uxEncryptWithStringBuilder.Text = "With StringBuilder";
+            uxEncryptWithStringBuilder.Click += EncryptWithStringBuilderClick;
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { undoToolStripMenuItem, redoToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(39, 20);
+            editToolStripMenuItem.Text = "Edit";
+            // 
+            // undoToolStripMenuItem
+            // 
+            undoToolStripMenuItem.Enabled = false;
+            undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
+            undoToolStripMenuItem.Size = new Size(180, 22);
+            undoToolStripMenuItem.Text = "Undo";
+            undoToolStripMenuItem.Click += UndoToolStripMenuItem_Click;
+            // 
+            // redoToolStripMenuItem
+            // 
+            redoToolStripMenuItem.Enabled = false;
+            redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
+            redoToolStripMenuItem.Size = new Size(180, 22);
+            redoToolStripMenuItem.Text = "Redo";
+            redoToolStripMenuItem.Click += RedoToolStripMenuItem_Click;
             // 
             // uxEditBuffer
             // 
-            this.uxEditBuffer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxEditBuffer.Location = new System.Drawing.Point(0, 24);
-            this.uxEditBuffer.MaxLength = 0;
-            this.uxEditBuffer.Multiline = true;
-            this.uxEditBuffer.Name = "uxEditBuffer";
-            this.uxEditBuffer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.uxEditBuffer.Size = new System.Drawing.Size(800, 426);
-            this.uxEditBuffer.TabIndex = 1;
+            uxEditBuffer.Dock = DockStyle.Fill;
+            uxEditBuffer.Location = new Point(0, 24);
+            uxEditBuffer.MaxLength = 0;
+            uxEditBuffer.Multiline = true;
+            uxEditBuffer.Name = "uxEditBuffer";
+            uxEditBuffer.ScrollBars = ScrollBars.Vertical;
+            uxEditBuffer.Size = new Size(800, 426);
+            uxEditBuffer.TabIndex = 1;
+            uxEditBuffer.TextChanged += uxEditBuffer_TextChanged;
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uxEditBuffer);
-            this.Controls.Add(this.uxMenuBar);
-            this.MainMenuStrip = this.uxMenuBar;
-            this.Name = "UserInterface";
-            this.Text = "Text Editor";
-            this.uxMenuBar.ResumeLayout(false);
-            this.uxMenuBar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(uxEditBuffer);
+            Controls.Add(uxMenuBar);
+            MainMenuStrip = uxMenuBar;
+            Name = "UserInterface";
+            Text = "Text Editor";
+            uxMenuBar.ResumeLayout(false);
+            uxMenuBar.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -138,5 +161,8 @@ namespace Ksu.Cis300.TextEditor
         private ToolStripMenuItem uxEncrypt;
         private ToolStripMenuItem uxEncryptWithString;
         private ToolStripMenuItem uxEncryptWithStringBuilder;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem undoToolStripMenuItem;
+        private ToolStripMenuItem redoToolStripMenuItem;
     }
 }

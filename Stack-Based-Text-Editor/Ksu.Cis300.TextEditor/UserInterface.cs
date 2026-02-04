@@ -311,9 +311,9 @@ namespace Ksu.Cis300.TextEditor
         private void UndoClick(object sender, EventArgs e)
         {
             // Because no null values are pushed onto the stack, Pop won't return a null.
-            string editStr = (string)_editHistory.Pop()!;
-            int loc = (int)_editHistory.Pop()!;
-            bool isDel = (bool)_editHistory.Pop()!;
+            string editStr = (string)_editHistory.Pop();
+            int loc = (int)_editHistory.Pop();
+            bool isDel = (bool)_editHistory.Pop();
             _undoHistory.Push(isDel);
             _undoHistory.Push(loc);
             _undoHistory.Push(editStr);
@@ -330,9 +330,9 @@ namespace Ksu.Cis300.TextEditor
         private void RedoClick(object sender, EventArgs e)
         {
             // Because no null values are pushed onto the stack, Pop won't return a null.
-            string editStr = (string)_undoHistory.Pop()!;
-            int loc = (int)_undoHistory.Pop()!;
-            bool isDel = (bool)_undoHistory.Pop()!;
+            string editStr = (string)_undoHistory.Pop();
+            int loc = (int)_undoHistory.Pop();
+            bool isDel = (bool)_undoHistory.Pop();
             _editHistory.Push(isDel);
             _editHistory.Push(loc);
             _editHistory.Push(editStr);

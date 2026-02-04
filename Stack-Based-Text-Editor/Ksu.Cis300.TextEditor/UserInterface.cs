@@ -341,4 +341,4 @@ namespace Ksu.Cis300.TextEditor
             uxRedo.Enabled = _undoHistory.Count > 0;
         }
     }
-}
+}   

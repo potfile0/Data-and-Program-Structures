@@ -33,12 +33,12 @@ namespace Ksu.Cis300.TextEditor
         /// <summary>
         /// The history of edits.
         /// </summary>
-        private System.Collections.Stack _editHistory = new();
+        private StackLibrary.Stack<object> _editHistory = new();
 
         /// <summary>
         /// The history of undone edits.
         /// </summary>
-        private System.Collections.Stack _undoHistory = new();
+        private StackLibrary.Stack<object> _undoHistory = new();
 
         /// <summary>
         /// The last text seen in the editor.

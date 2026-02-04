@@ -13,4 +13,8 @@
     <PackageReference Include="KSU.CS.CodeAnalyzers" Version="1.0.3.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ksu.Cis300.StackLibrary\Ksu.Cis300.StackLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -28,176 +28,155 @@ namespace Ksu.Cis300.CapitalGainCalculator
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxNumberLabel = new System.Windows.Forms.Label();
-            this.uxNumber = new System.Windows.Forms.NumericUpDown();
-            this.uxCostLabel = new System.Windows.Forms.Label();
-            this.uxCost = new System.Windows.Forms.NumericUpDown();
-            this.uxBuy = new System.Windows.Forms.Button();
-            this.uxSell = new System.Windows.Forms.Button();
-            this.uxOwnedLabel = new System.Windows.Forms.Label();
-            this.uxOwned = new System.Windows.Forms.TextBox();
-            this.uxGainLabel = new System.Windows.Forms.Label();
-            this.uxGain = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.uxNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uxCost)).BeginInit();
-            this.SuspendLayout();
+            uxNumberLabel = new Label();
+            uxNumber = new NumericUpDown();
+            uxCostLabel = new Label();
+            uxCost = new NumericUpDown();
+            uxBuy = new Button();
+            uxSell = new Button();
+            uxOwnedLabel = new Label();
+            uxOwned = new TextBox();
+            uxGainLabel = new Label();
+            uxGain = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)uxNumber).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)uxCost).BeginInit();
+            SuspendLayout();
             // 
             // uxNumberLabel
             // 
-            this.uxNumberLabel.AutoSize = true;
-            this.uxNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxNumberLabel.Location = new System.Drawing.Point(29, 38);
-            this.uxNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uxNumberLabel.Name = "uxNumberLabel";
-            this.uxNumberLabel.Size = new System.Drawing.Size(437, 33);
-            this.uxNumberLabel.TabIndex = 0;
-            this.uxNumberLabel.Text = "Number of shares in transaction:";
+            uxNumberLabel.AutoSize = true;
+            uxNumberLabel.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxNumberLabel.Location = new Point(20, 23);
+            uxNumberLabel.Name = "uxNumberLabel";
+            uxNumberLabel.Size = new Size(280, 24);
+            uxNumberLabel.TabIndex = 0;
+            uxNumberLabel.Text = "Number of shares in transaction:";
             // 
             // uxNumber
             // 
-            this.uxNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxNumber.Location = new System.Drawing.Point(470, 35);
-            this.uxNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uxNumber.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.uxNumber.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.uxNumber.Name = "uxNumber";
-            this.uxNumber.Size = new System.Drawing.Size(109, 40);
-            this.uxNumber.TabIndex = 1;
-            this.uxNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.uxNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            uxNumber.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uxNumber.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxNumber.Location = new Point(329, 21);
+            uxNumber.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            uxNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            uxNumber.Name = "uxNumber";
+            uxNumber.Size = new Size(76, 29);
+            uxNumber.TabIndex = 1;
+            uxNumber.TextAlign = HorizontalAlignment.Right;
+            uxNumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // uxCostLabel
             // 
-            this.uxCostLabel.AutoSize = true;
-            this.uxCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxCostLabel.Location = new System.Drawing.Point(29, 97);
-            this.uxCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uxCostLabel.Name = "uxCostLabel";
-            this.uxCostLabel.Size = new System.Drawing.Size(267, 33);
-            this.uxCostLabel.TabIndex = 2;
-            this.uxCostLabel.Text = "Cost of each share:";
+            uxCostLabel.AutoSize = true;
+            uxCostLabel.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxCostLabel.Location = new Point(20, 58);
+            uxCostLabel.Name = "uxCostLabel";
+            uxCostLabel.Size = new Size(171, 24);
+            uxCostLabel.TabIndex = 2;
+            uxCostLabel.Text = "Cost of each share:";
             // 
             // uxCost
             // 
-            this.uxCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxCost.DecimalPlaces = 2;
-            this.uxCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxCost.Location = new System.Drawing.Point(314, 93);
-            this.uxCost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uxCost.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.uxCost.Name = "uxCost";
-            this.uxCost.Size = new System.Drawing.Size(264, 40);
-            this.uxCost.TabIndex = 3;
-            this.uxCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            uxCost.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uxCost.DecimalPlaces = 2;
+            uxCost.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxCost.Location = new Point(220, 56);
+            uxCost.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            uxCost.Name = "uxCost";
+            uxCost.Size = new Size(185, 29);
+            uxCost.TabIndex = 3;
+            uxCost.TextAlign = HorizontalAlignment.Right;
             // 
             // uxBuy
             // 
-            this.uxBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxBuy.Location = new System.Drawing.Point(29, 160);
-            this.uxBuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uxBuy.Name = "uxBuy";
-            this.uxBuy.Size = new System.Drawing.Size(251, 70);
-            this.uxBuy.TabIndex = 4;
-            this.uxBuy.Text = "Buy";
-            this.uxBuy.UseVisualStyleBackColor = true;
+            uxBuy.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxBuy.Location = new Point(20, 96);
+            uxBuy.Name = "uxBuy";
+            uxBuy.Size = new Size(176, 42);
+            uxBuy.TabIndex = 4;
+            uxBuy.Text = "Buy";
+            uxBuy.UseVisualStyleBackColor = true;
+            uxBuy.Click += uxBuy_Click;
             // 
             // uxSell
             // 
-            this.uxSell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxSell.Location = new System.Drawing.Point(327, 160);
-            this.uxSell.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uxSell.Name = "uxSell";
-            this.uxSell.Size = new System.Drawing.Size(251, 70);
-            this.uxSell.TabIndex = 5;
-            this.uxSell.Text = "Sell";
-            this.uxSell.UseVisualStyleBackColor = true;
+            uxSell.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uxSell.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxSell.Location = new Point(229, 96);
+            uxSell.Name = "uxSell";
+            uxSell.Size = new Size(176, 42);
+            uxSell.TabIndex = 5;
+            uxSell.Text = "Sell";
+            uxSell.UseVisualStyleBackColor = true;
+            uxSell.Click += uxSell_Click;
             // 
             // uxOwnedLabel
             // 
-            this.uxOwnedLabel.AutoSize = true;
-            this.uxOwnedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxOwnedLabel.Location = new System.Drawing.Point(29, 260);
-            this.uxOwnedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uxOwnedLabel.Name = "uxOwnedLabel";
-            this.uxOwnedLabel.Size = new System.Drawing.Size(348, 33);
-            this.uxOwnedLabel.TabIndex = 6;
-            this.uxOwnedLabel.Text = "Number of shares owned:";
+            uxOwnedLabel.AutoSize = true;
+            uxOwnedLabel.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxOwnedLabel.Location = new Point(20, 156);
+            uxOwnedLabel.Name = "uxOwnedLabel";
+            uxOwnedLabel.Size = new Size(228, 24);
+            uxOwnedLabel.TabIndex = 6;
+            uxOwnedLabel.Text = "Number of shares owned:";
             // 
             // uxOwned
             // 
-            this.uxOwned.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxOwned.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxOwned.Location = new System.Drawing.Point(384, 258);
-            this.uxOwned.Name = "uxOwned";
-            this.uxOwned.ReadOnly = true;
-            this.uxOwned.Size = new System.Drawing.Size(194, 39);
-            this.uxOwned.TabIndex = 7;
-            this.uxOwned.Text = "0";
-            this.uxOwned.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            uxOwned.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uxOwned.Font = new Font("Microsoft Sans Serif", 14F);
+            uxOwned.Location = new Point(269, 155);
+            uxOwned.Margin = new Padding(2);
+            uxOwned.Name = "uxOwned";
+            uxOwned.ReadOnly = true;
+            uxOwned.Size = new Size(137, 29);
+            uxOwned.TabIndex = 7;
+            uxOwned.Text = "0";
+            uxOwned.TextAlign = HorizontalAlignment.Right;
             // 
             // uxGainLabel
             // 
-            this.uxGainLabel.AutoSize = true;
-            this.uxGainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxGainLabel.Location = new System.Drawing.Point(29, 312);
-            this.uxGainLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uxGainLabel.Name = "uxGainLabel";
-            this.uxGainLabel.Size = new System.Drawing.Size(224, 33);
-            this.uxGainLabel.TabIndex = 8;
-            this.uxGainLabel.Text = "Net capital gain:";
+            uxGainLabel.AutoSize = true;
+            uxGainLabel.Font = new Font("Microsoft Sans Serif", 14.25F);
+            uxGainLabel.Location = new Point(20, 187);
+            uxGainLabel.Name = "uxGainLabel";
+            uxGainLabel.Size = new Size(143, 24);
+            uxGainLabel.TabIndex = 8;
+            uxGainLabel.Text = "Net capital gain:";
             // 
             // uxGain
             // 
-            this.uxGain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxGain.Location = new System.Drawing.Point(260, 312);
-            this.uxGain.Name = "uxGain";
-            this.uxGain.ReadOnly = true;
-            this.uxGain.Size = new System.Drawing.Size(318, 39);
-            this.uxGain.TabIndex = 9;
-            this.uxGain.Text = "0.00";
-            this.uxGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            uxGain.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uxGain.Font = new Font("Microsoft Sans Serif", 14F);
+            uxGain.Location = new Point(182, 187);
+            uxGain.Margin = new Padding(2);
+            uxGain.Name = "uxGain";
+            uxGain.ReadOnly = true;
+            uxGain.Size = new Size(224, 29);
+            uxGain.TabIndex = 9;
+            uxGain.Text = "0.00";
+            uxGain.TextAlign = HorizontalAlignment.Right;
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 373);
-            this.Controls.Add(this.uxGain);
-            this.Controls.Add(this.uxGainLabel);
-            this.Controls.Add(this.uxOwned);
-            this.Controls.Add(this.uxOwnedLabel);
-            this.Controls.Add(this.uxSell);
-            this.Controls.Add(this.uxBuy);
-            this.Controls.Add(this.uxCost);
-            this.Controls.Add(this.uxCostLabel);
-            this.Controls.Add(this.uxNumber);
-            this.Controls.Add(this.uxNumberLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "UserInterface";
-            this.Text = "Capital Gain Calculator";
-            ((System.ComponentModel.ISupportInitialize)(this.uxNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uxCost)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(426, 224);
+            Controls.Add(uxGain);
+            Controls.Add(uxGainLabel);
+            Controls.Add(uxOwned);
+            Controls.Add(uxOwnedLabel);
+            Controls.Add(uxSell);
+            Controls.Add(uxBuy);
+            Controls.Add(uxCost);
+            Controls.Add(uxCostLabel);
+            Controls.Add(uxNumber);
+            Controls.Add(uxNumberLabel);
+            Name = "UserInterface";
+            Text = "Capital Gain Calculator";
+            ((System.ComponentModel.ISupportInitialize)uxNumber).EndInit();
+            ((System.ComponentModel.ISupportInitialize)uxCost).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

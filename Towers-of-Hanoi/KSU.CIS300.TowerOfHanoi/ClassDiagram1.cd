@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KSU.CIS300.TowerOfHanoi.UserInterface">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="uxButtonLeftA" Hidden="true" />
+      <Field Name="uxButtonLeftB" Hidden="true" />
+      <Field Name="uxButtonLeftC" Hidden="true" />
+      <Field Name="uxButtonNewPuzzle" Hidden="true" />
+      <Field Name="uxButtonRightA" Hidden="true" />
+      <Field Name="uxButtonRightB" Hidden="true" />
+      <Field Name="uxButtonRightC" Hidden="true" />
+      <Field Name="uxButtonSolve" Hidden="true" />
+      <Field Name="uxFlowLayoutPanelPegA" Hidden="true" />
+      <Field Name="uxFlowLayoutPanelPegB" Hidden="true" />
+      <Field Name="uxFlowLayoutPanelPegC" Hidden="true" />
+      <Field Name="uxLabelDelay" Hidden="true" />
+      <Field Name="uxMoveCount" Hidden="true" />
+      <Field Name="uxMoveLable" Hidden="true" />
+      <Field Name="uxNumericUpDownDelay" Hidden="true" />
+      <Field Name="uxNumericUpDownDiscCount" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BEAAgAAAgSBBCQ7AAB6A1AAKAAAAIkBwAAgBACREAAA=</HashCode>
+      <FileName>UserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

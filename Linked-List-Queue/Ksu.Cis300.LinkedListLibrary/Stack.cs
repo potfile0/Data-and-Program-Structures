@@ -10,51 +10,68 @@ using System.Threading.Tasks;
 namespace Ksu.Cis300.LinkedListLibrary
 {
     /// <summary>
-    /// A generic stack implemented using a linked list.
+    /// Queue made utilizing linked lists
     /// </summary>
-    /// <typeparam name="T">The type of elements in the stack.</typeparam>
-    public class Stack<T>
+    /// <typeparam name="T">A generic type</typeparam>
+    public class Queue<T>
     {
         /// <summary>
-        /// The cell at the top of the stack.
+        /// Keeping track of top
         /// </summary>
-        private LinkedListCell<T>? _top = null;
+        private LinkedListCell<T>? _top;
+        /// <summary>
+        /// Keeping track of bottom
+        /// </summary>
+        public LinkedListCell<T>? _bottom;
 
         /// <summary>
-        /// The number of elements in the stack.
+        /// Count property to keep track of count of objects
         /// </summary>
         public int Count { get; private set; }
 
         /// <summary>
-        /// Places the given element on the top of the stack.
+        /// A method Enqueue to add the object
         /// </summary>
-        /// <param name="x">The element to push.</param>
-        public void Push(T x)
+        /// <param name="data">The data to add</param>
+        public void Enqueue(T data)
         {
-            _top = new(x, _top);
+            LinkedListCell<T> cell = new LinkedListCell<T>(data, null);
+
+            if (Count == 0)
+            {
+                _top = cell;
+            }
+            else
+            {
+                _bottom!.Next = cell;
+            }
+
+            _bottom = cell;
             Count++;
+
         }
 
         /// <summary>
-        /// Gets the element at the top of the stack. If the stack is
-        /// empty, throws an InvalidOperationException.
+        /// A method to Peek whats in the top of queue
         /// </summary>
-        /// <returns>The element at the top of the stack.</returns>
+        /// <returns>Returns the object at the top of the queue</returns>
+        /// <exception cref="InvalidOperationException"> An exception when there is nothing to peek</exception>
         public T Peek()
         {
             if (_top == null)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("Nothing to Peek");
             }
             return _top.Data;
         }
 
         /// <summary>
-        /// Removes the element at the top of the stack.
+        /// A method to Dequeue an object from the queue
         /// </summary>
-        /// <returns>The element removed.</returns>
-        public T Pop()
+        /// <returns>returns the object at the top of the queue</returns>
+        public T Dequeue()
         {
+            
             T x = Peek();
 
             // The above call to Peek ensures that _top isn't null.

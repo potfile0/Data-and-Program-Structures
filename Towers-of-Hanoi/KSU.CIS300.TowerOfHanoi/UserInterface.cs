@@ -39,7 +39,7 @@ namespace KSU.CIS300.TowerOfHanoi
         public void NewPuzzle(int count)
         {
             MoveCount = 0;
-            PegA.Clear();
+            PegA = new();
             PegB.Clear();
             PegC.Clear();
             CleanPanel(flowLayoutPanel1);
@@ -180,13 +180,22 @@ namespace KSU.CIS300.TowerOfHanoi
             {
                 return false;
             }
+            MoveCount++;
+
+            label2.Text = MoveCount.ToString();
+            label2.Update();
 
             int disc = from.Pop();
             to.Push(disc);
 
-            MoveCount++;
-            label2.Text = MoveCount.ToString();
-            label2.Update();
+            if(PegB.Count > 0 || PegC.Count > 0)
+            {
+                button3.Enabled= false;
+            }
+            else
+            {
+                button3.Enabled = true;
+            }
 
             UpdatePanels();
 
@@ -205,7 +214,7 @@ namespace KSU.CIS300.TowerOfHanoi
         //check to see if the tower is complete
         public bool CheckIfWon()
         {
-            if (PegC.Count != numericUpDown1.Value)
+            if (PegC.Count != _discCount)
             {
                 return false;
             }
@@ -217,26 +226,28 @@ namespace KSU.CIS300.TowerOfHanoi
         }
         public void Solve(Stack<int> x, Stack<int> y, int delay)
         {
-            while (PegC.Count != numericUpDown1.Value)
+            while (PegC.Count != _discCount)
             {
                 MoveEither(PegA, x);
-                if (CheckIfWon().Equals(true))
+                Thread.Sleep(delay);
+                if (CheckIfWon())
                 {
                     break;
                 }
-                Thread.Sleep(delay);
+                
                 MoveEither(PegA, y);
-                if (CheckIfWon().Equals(true))
+                Thread.Sleep(delay);
+                if (CheckIfWon())
                 {
                     break;
                 }
-                Thread.Sleep(delay);
+                
                 MoveEither(PegB, PegC);
-                if (CheckIfWon().Equals(true))
+                Thread.Sleep(delay);
+                if (CheckIfWon())
                 {
                     break;
                 }
-                Thread.Sleep(delay);
             }
         }
 

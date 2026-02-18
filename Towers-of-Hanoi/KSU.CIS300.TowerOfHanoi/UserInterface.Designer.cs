@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new System.Windows.Forms.Button();
+            NewPuzzleButton = new System.Windows.Forms.Button();
             numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -50,18 +50,20 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // NewPuzzleButton
             // 
-            button1.Location = new System.Drawing.Point(20, 11);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "New";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            NewPuzzleButton.AccessibleName = "button1_Click";
+            NewPuzzleButton.Location = new System.Drawing.Point(20, 11);
+            NewPuzzleButton.Name = "NewPuzzleButton";
+            NewPuzzleButton.Size = new System.Drawing.Size(75, 23);
+            NewPuzzleButton.TabIndex = 0;
+            NewPuzzleButton.Text = "New";
+            NewPuzzleButton.UseVisualStyleBackColor = true;
+            NewPuzzleButton.Click += button1_Click;
             // 
             // numericUpDown1
             // 
+            numericUpDown1.AccessibleName = "NumberOfDisc";
             numericUpDown1.Location = new System.Drawing.Point(101, 11);
             numericUpDown1.Maximum = new decimal(new int[] { 11, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -90,6 +92,7 @@
             // 
             // button2
             // 
+            button2.AccessibleName = "UndoButton";
             button2.Location = new System.Drawing.Point(295, 7);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(75, 23);
@@ -235,7 +238,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(numericUpDown1);
-            Controls.Add(button1);
+            Controls.Add(NewPuzzleButton);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Margin = new System.Windows.Forms.Padding(1);
             Name = "UserInterface";
@@ -248,7 +251,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button NewPuzzleButton;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

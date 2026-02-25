@@ -28,119 +28,110 @@ namespace Ksu.Cis300.NameLookup
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Frequency",
-            ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Rank",
-            ""}, -1);
-            this.uxMenuBar = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxFileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxNameLabel = new System.Windows.Forms.ToolStripTextBox();
-            this.uxName = new System.Windows.Forms.ToolStripTextBox();
-            this.uxTable = new System.Windows.Forms.ListView();
-            this.uxAttributeHeader = new System.Windows.Forms.ColumnHeader();
-            this.uxValueHeader = new System.Windows.Forms.ColumnHeader();
-            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxLookup = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxMenuBar.SuspendLayout();
-            this.SuspendLayout();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Frequency", "" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "Rank", "" }, -1);
+            uxMenuBar = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            uxFileMenu = new ToolStripMenuItem();
+            uxOpen = new ToolStripMenuItem();
+            uxNameLabel = new ToolStripTextBox();
+            uxName = new ToolStripTextBox();
+            uxLookup = new ToolStripMenuItem();
+            uxTable = new ListView();
+            uxAttributeHeader = new ColumnHeader();
+            uxValueHeader = new ColumnHeader();
+            uxOpenDialog = new OpenFileDialog();
+            uxMenuBar.SuspendLayout();
+            SuspendLayout();
             // 
             // uxMenuBar
             // 
-            this.uxMenuBar.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.uxFileMenu,
-            this.uxNameLabel,
-            this.uxName,
-            this.uxLookup});
-            this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuBar.Name = "uxMenuBar";
-            this.uxMenuBar.Size = new System.Drawing.Size(800, 35);
-            this.uxMenuBar.TabIndex = 0;
-            this.uxMenuBar.Text = "menuStrip1";
+            uxMenuBar.ImageScalingSize = new Size(24, 24);
+            uxMenuBar.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, uxFileMenu, uxNameLabel, uxName, uxLookup });
+            uxMenuBar.Location = new Point(0, 0);
+            uxMenuBar.Name = "uxMenuBar";
+            uxMenuBar.Padding = new Padding(4, 1, 0, 1);
+            uxMenuBar.Size = new Size(560, 25);
+            uxMenuBar.TabIndex = 0;
+            uxMenuBar.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(16, 31);
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(12, 23);
             // 
             // uxFileMenu
             // 
-            this.uxFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxOpen});
-            this.uxFileMenu.Name = "uxFileMenu";
-            this.uxFileMenu.Size = new System.Drawing.Size(54, 31);
-            this.uxFileMenu.Text = "File";
+            uxFileMenu.DropDownItems.AddRange(new ToolStripItem[] { uxOpen });
+            uxFileMenu.Name = "uxFileMenu";
+            uxFileMenu.Size = new Size(37, 23);
+            uxFileMenu.Text = "File";
             // 
             // uxOpen
             // 
-            this.uxOpen.Name = "uxOpen";
-            this.uxOpen.Size = new System.Drawing.Size(185, 34);
-            this.uxOpen.Text = "Open . . .";
+            uxOpen.Name = "uxOpen";
+            uxOpen.Size = new Size(180, 22);
+            uxOpen.Text = "Open . . .";
+            uxOpen.Click += UxOpenClick;
             // 
             // uxNameLabel
             // 
-            this.uxNameLabel.Name = "uxNameLabel";
-            this.uxNameLabel.ReadOnly = true;
-            this.uxNameLabel.Size = new System.Drawing.Size(80, 31);
-            this.uxNameLabel.Text = "Name:";
-            this.uxNameLabel.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            uxNameLabel.Name = "uxNameLabel";
+            uxNameLabel.ReadOnly = true;
+            uxNameLabel.Size = new Size(57, 23);
+            uxNameLabel.Text = "Name:";
+            uxNameLabel.TextBoxTextAlign = HorizontalAlignment.Right;
             // 
             // uxName
             // 
-            this.uxName.Name = "uxName";
-            this.uxName.Size = new System.Drawing.Size(300, 31);
-            // 
-            // uxTable
-            // 
-            this.uxTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.uxAttributeHeader,
-            this.uxValueHeader});
-            this.uxTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxTable.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.uxTable.Location = new System.Drawing.Point(0, 35);
-            this.uxTable.Name = "uxTable";
-            this.uxTable.Size = new System.Drawing.Size(800, 415);
-            this.uxTable.TabIndex = 1;
-            this.uxTable.UseCompatibleStateImageBehavior = false;
-            this.uxTable.View = System.Windows.Forms.View.Details;
-            // 
-            // uxAttributeHeader
-            // 
-            this.uxAttributeHeader.Text = "Attribute";
-            this.uxAttributeHeader.Width = 120;
-            // 
-            // uxValueHeader
-            // 
-            this.uxValueHeader.Text = "Value";
-            this.uxValueHeader.Width = 120;
+            uxName.Name = "uxName";
+            uxName.Size = new Size(211, 23);
             // 
             // uxLookup
             // 
-            this.uxLookup.Name = "uxLookup";
-            this.uxLookup.Size = new System.Drawing.Size(88, 31);
-            this.uxLookup.Text = "Lookup";
+            uxLookup.Name = "uxLookup";
+            uxLookup.Size = new Size(59, 23);
+            uxLookup.Text = "Lookup";
+            uxLookup.Click += UxLookup_Click;
+            // 
+            // uxTable
+            // 
+            uxTable.Columns.AddRange(new ColumnHeader[] { uxAttributeHeader, uxValueHeader });
+            uxTable.Dock = DockStyle.Fill;
+            uxTable.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            uxTable.Location = new Point(0, 25);
+            uxTable.Margin = new Padding(2);
+            uxTable.Name = "uxTable";
+            uxTable.Size = new Size(560, 245);
+            uxTable.TabIndex = 1;
+            uxTable.UseCompatibleStateImageBehavior = false;
+            uxTable.View = View.Details;
+            // 
+            // uxAttributeHeader
+            // 
+            uxAttributeHeader.Text = "Attribute";
+            uxAttributeHeader.Width = 120;
+            // 
+            // uxValueHeader
+            // 
+            uxValueHeader.Text = "Value";
+            uxValueHeader.Width = 120;
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uxTable);
-            this.Controls.Add(this.uxMenuBar);
-            this.MainMenuStrip = this.uxMenuBar;
-            this.Name = "UserInterface";
-            this.Text = "Name Lookup";
-            this.uxMenuBar.ResumeLayout(false);
-            this.uxMenuBar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(560, 270);
+            Controls.Add(uxTable);
+            Controls.Add(uxMenuBar);
+            MainMenuStrip = uxMenuBar;
+            Margin = new Padding(2);
+            Name = "UserInterface";
+            Text = "Name Lookup";
+            uxMenuBar.ResumeLayout(false);
+            uxMenuBar.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

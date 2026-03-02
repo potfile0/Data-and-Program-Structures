@@ -1,7 +1,6 @@
 /* Dictionary.cs
  * Author: Josh Weese
  */
-using Ksu.Cis300.LinkedListLibrary;
 
 namespace Ksu.Cis300.DictionaryLibrary
 {
@@ -13,10 +12,9 @@ namespace Ksu.Cis300.DictionaryLibrary
     public class Dictionary<TKey, TValue> where TKey: notnull, IComparable<TKey>
     {
         /// <summary>
-        /// The keys and values of the dictionary, ordered by key. Includes a header cell whose
-        /// Data.Key and/or Data.Value may be null.
+        /// a list that holds the key value pair
         /// </summary>
-        private LinkedListCell<KeyValuePair<TKey, TValue>> _elements = new(default, null);
+        private List<KeyValuePair<TKey, TValue>> _elements = new();
 
         /// <summary>
         /// Checks that the given key is not null.
@@ -31,62 +29,77 @@ namespace Ksu.Cis300.DictionaryLibrary
         }
         
         /// <summary>
-        /// Finds the last cell in _elements whose key is less than the given key, assuming the
-        /// header cell has a key less than any given key.
+        /// A method to find if the key exists in the list and if not
+        /// it returns the index where the key should be placed
         /// </summary>
-        /// <param name="key">The key to look for.</param>
-        /// <returns>The last cell containing a key less than the given key.</returns>
-        private LinkedListCell<KeyValuePair<TKey, TValue>> FindLastLessThan(TKey key)
+        /// <param name="key">they key to find</param>
+        /// <returns>returns the key in form of integer</returns>
+        private int Find(TKey key)
         {
-            LinkedListCell<KeyValuePair<TKey, TValue>> p = _elements;
-            while (p.Next != null && p.Next.Data.Key.CompareTo(key) < 0)
+            int start = 0;
+            int end = _elements.Count;
+
+            while (start < end)
             {
-                p = p.Next;
+                int midPoint = (start + end) / 2;
+                int comp = _elements[midPoint].Key.CompareTo(key);
+
+                if (comp == 0)
+                {
+                    return midPoint;
+                }
+                else if(comp == 1){
+                    end = midPoint;
+                }
+                else
+                {
+                    start = midPoint + 1;
+                }
             }
-            return p;
+            return start;
+
         }
 
         /// <summary>
-        /// Gets the value associated with the given key.
+        /// A method to check if the key exists in the list and if yes
+        /// it returns a bool if the key is found and sets the value for that key
+        /// else just sets the value of that key to default
         /// </summary>
-        /// <param name="k">The key to look up.</param>
-        /// <param name="v">The value associated with k, or the default value if k is not found.</param>
-        /// <returns>Whether k was found.</returns>
+        /// <param name="k">the key to look for</param>
+        /// <param name="v">the value to set</param>
+        /// <returns>return true if the key exists and value is set else false</returns>
         public bool TryGetValue(TKey k, out TValue? v)
         {
             CheckKey(k);
-            LinkedListCell<KeyValuePair<TKey, TValue>> p = FindLastLessThan(k);
-            if (p.Next == null || !p.Next.Data.Key.Equals(k))
+            int p = Find(k);
+
+            if (p < _elements.Count && _elements[p].Key.CompareTo(k) == 0)
             {
-                v = default;
-                return false;
-            }
-            else
-            {
-                v = p.Next.Data.Value;
+                v = _elements[p].Value;
                 return true;
             }
+
+            v = default;
+            return false;
         }
 
         /// <summary>
-        /// Adds the given key and value to the dictionary.
+        /// A method to add the key value pair to the list
         /// </summary>
-        /// <param name="k">The key.</param>
-        /// <param name="v">The value to be associated with k.</param>
+        /// <param name="k">the key to add</param>
+        /// <param name="v">the value to add</param>
+        /// <exception cref="ArgumentException">exception if the key alreay exists</exception>
         public void Add(TKey k, TValue v)
         {
             CheckKey(k);
-            LinkedListCell<KeyValuePair<TKey, TValue>> p = FindLastLessThan(k);
-            if (p.Next == null || !p.Next.Data.Key.Equals(k))
-            {
-                LinkedListCell<KeyValuePair<TKey, TValue>> cell = 
-                    new(new KeyValuePair<TKey, TValue>(k, v), p.Next);
-                p.Next = cell;
-            }
-            else
+            int p = Find(k);
+
+            if (p < _elements.Count && _elements[p].Key.CompareTo(k) == 0)
             {
                 throw new ArgumentException();
             }
+
+            _elements.Insert(p, new KeyValuePair<TKey, TValue>(k, v));
         }
     }
 }

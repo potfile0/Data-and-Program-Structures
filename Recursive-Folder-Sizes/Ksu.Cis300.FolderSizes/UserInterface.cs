@@ -1,6 +1,7 @@
 /* UserInterface.cs
  * Author: Josh Weese
  */
+using System.IO;
 namespace Ksu.Cis300.FolderSizes
 {
     /// <summary>
@@ -28,7 +29,18 @@ namespace Ksu.Cis300.FolderSizes
         /// <returns>The size in bytes of the given folder.</returns>
         private static long TotalSize(DirectoryInfo folder)
         {
-            throw new NotImplementedException();
+            long total = 0;
+
+            foreach (FileInfo x in folder.GetFiles()) {
+                total = total + x.Length;
+            }
+
+            foreach (DirectoryInfo x in folder.GetDirectories())
+            {
+                total += TotalSize(x);
+            }
+
+            return total;
         }
 
         /// <summary>

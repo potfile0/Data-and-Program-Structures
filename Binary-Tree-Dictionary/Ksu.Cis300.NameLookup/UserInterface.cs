@@ -71,7 +71,7 @@ namespace Ksu.Cis300.NameLookup
                 try
                 {
                     _nameInformation = ReadFile(uxOpenDialog.FileName);
-                    MessageBox.Show("File successfully read.");
+                    _nameInformation.Drawing.Show();
                 }
                 catch (Exception ex)
                 {

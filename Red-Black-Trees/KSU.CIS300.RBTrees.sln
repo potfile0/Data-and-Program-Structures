@@ -1,0 +1,31 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSU.CIS300.RBTrees", "KSU.CIS300.RBTrees\KSU.CIS300.RBTrees.csproj", "{F3C381D9-AB22-40D9-B596-18490C5DA309}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSU.CIS300.RBTrees.Tests", "KSU.CIS300.RBTrees.Tests\KSU.CIS300.RBTrees.Tests.csproj", "{E59E2E59-29F4-4763-B169-123C937844D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3C381D9-AB22-40D9-B596-18490C5DA309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C381D9-AB22-40D9-B596-18490C5DA309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C381D9-AB22-40D9-B596-18490C5DA309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C381D9-AB22-40D9-B596-18490C5DA309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59E2E59-29F4-4763-B169-123C937844D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59E2E59-29F4-4763-B169-123C937844D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59E2E59-29F4-4763-B169-123C937844D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59E2E59-29F4-4763-B169-123C937844D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6871DBF2-B132-490E-927D-EEFCE15ED78D}
+	EndGlobalSection
+EndGlobal

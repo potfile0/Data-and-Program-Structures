@@ -6,18 +6,8 @@ namespace Ksu.Cis300.TrieLibrary
     /// <summary>
     /// A single node of a trie.
     /// </summary>
-    public class Trie
+    public class TrieWithManyChildren : ITrie
     {
-        /// <summary>
-        /// The first character of the alphabet used.
-        /// </summary>
-        private const char _alphabetStart = 'a';
-
-        /// <summary>
-        /// The size of the alphabet used.
-        /// </summary>
-        private const int _alphabetSize = 26;
-
         /// <summary>
         /// Indicates whether the trie rooted at this node contains the empty string.
         /// </summary>
@@ -26,7 +16,32 @@ namespace Ksu.Cis300.TrieLibrary
         /// <summary>
         /// This node's children.
         /// </summary>
-        private Trie?[] _children = new Trie[_alphabetSize];
+        private ITrie?[] _children = new ITrie?[ITrie.AlphabetSize];
+
+        /// <summary>
+        /// Constructs a trie containing the given string and having the given child at the given label.
+        /// If s contains any characters other than lower-case English letters,
+        /// throws an ArgumentException.
+        /// If childLabel is not a lower-case English letter, throws an ArgumentException.
+        /// </summary>
+        /// <param name="s">The string to include.</param>
+        /// <param name="hasEmpty">Indicates whether this trie should contain the empty string.</param>
+        /// <param name="childLabel">The label of the child.</param>
+        /// <param name="child">The child labeled childLabel.</param>
+        public TrieWithManyChildren(string s, bool hasEmpty, char childLabel, ITrie child)
+        {
+            if (s == null || child == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (childLabel < ITrie.AlphabetStart || childLabel >= ITrie.AlphabetStart + ITrie.AlphabetStart)
+            {
+                throw new ArgumentException();
+            }
+            _hasEmpty = hasEmpty;
+            _children[childLabel - ITrie.AlphabetStart] = child;
+            Add(s);
+        }
 
         /// <summary>
         /// Determines whether the trie rooted at this node contains the given string.
@@ -45,14 +60,14 @@ namespace Ksu.Cis300.TrieLibrary
             }
             else
             {
-                int loc = s[0] - _alphabetStart;
-                if (loc < 0 || loc >= _alphabetSize)
+                int loc = s[0] - ITrie.AlphabetStart;
+                if (loc < 0 || loc >= ITrie.AlphabetSize)
                 {
                     return false;
                 }
                 else 
                 {
-                    Trie? child = _children[loc];
+                    ITrie? child = _children[loc];
                     if (child == null)
                     {
                         return false;
@@ -66,7 +81,7 @@ namespace Ksu.Cis300.TrieLibrary
         /// Adds the given string to the trie rooted at this node.
         /// </summary>
         /// <param name="s">The string to add.</param>
-        public void Add(string s)
+        public ITrie Add(string s)
         {
             if (s == null)
             {
@@ -78,19 +93,21 @@ namespace Ksu.Cis300.TrieLibrary
             }
             else
             {
-                int loc = s[0] - _alphabetStart;
-                if (loc < 0 || loc >= _alphabetSize)
+                int loc = s[0] - ITrie.AlphabetStart;
+                if (loc < 0 || loc >= ITrie.AlphabetSize)
                 {
                     throw new ArgumentException();
                 }
-                Trie? child = _children[loc];
+                ITrie? child = _children[loc];
                 if (child == null)
                 {
-                    child = new Trie();
+                    child = new TrieWithNoChildren();
                 }
-                child.Add(s.Substring(1));
-                _children[loc] = child;
+                _children[loc] = child.Add(s.Substring(1));
             }
+            return this;
         }
     }
+
+    
 }

@@ -34,7 +34,7 @@ namespace Ksu.Cis300.TrieLibrary
             {
                 throw new ArgumentNullException();
             }
-            if (childLabel < ITrie.AlphabetStart || childLabel >= ITrie.AlphabetStart + ITrie.AlphabetStart)
+            if (childLabel < ITrie.AlphabetStart || childLabel >= ITrie.AlphabetStart + ITrie.AlphabetSize)
             {
                 throw new ArgumentException();
             }
@@ -65,7 +65,7 @@ namespace Ksu.Cis300.TrieLibrary
                 {
                     return false;
                 }
-                else 
+                else
                 {
                     ITrie? child = _children[loc];
                     if (child == null)
@@ -109,5 +109,5 @@ namespace Ksu.Cis300.TrieLibrary
         }
     }
 
-    
+
 }

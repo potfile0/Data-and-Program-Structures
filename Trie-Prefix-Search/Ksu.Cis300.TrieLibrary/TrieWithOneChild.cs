@@ -2,7 +2,7 @@
  * Author: Josh Weese
  */
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +14,52 @@ namespace Ksu.Cis300.TrieLibrary
     /// </summary>
     public class TrieWithOneChild : ITrie
     {
+        /// <summary>
+        /// Gets all of the strings that form words in this trie when appended to the given prefix.
+        /// </summary>
+        /// <param name="prefix">The prefix</param>
+        /// <returns>A trie containing all of the strings that form words in this trie when appended
+        /// to the given prefix.</returns>
+        public ITrie? GetCompletions(string prefix)
+        {
+            if (prefix == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (prefix == "")
+            {
+                return this;
+            }
+            else if (prefix[0] == _childLabel)
+            {
+                return _child.GetCompletions(prefix.Substring(1));
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Adds all of the strings in this trie alphabetically to the end of the given list, with each
+        /// string prefixed by the given prefix.
+        /// </summary>
+        /// <param name="prefix">The prefix.</param>
+        /// <param name="list">The list to which the strings are to be added.</param>
+        public void AddAll(StringBuilder prefix, IList list)
+        {
+            if (prefix == null || list == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (_hasEmpty)
+            {
+                list.Add(prefix.ToString());
+            }
+            prefix.Append(_childLabel);
+            _child.AddAll(prefix, list);
+            prefix.Length--;
+        }
         /// <summary>
         /// Indicates whether the trie rooted at this node contains the empty string.
         /// </summary>

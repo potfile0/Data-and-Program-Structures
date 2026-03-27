@@ -2,6 +2,7 @@
  * Author: Josh Weese
  */
 using Ksu.Cis300.TrieLibrary;
+using System.Text;
 
 namespace Ksu.Cis300.Prefixes
 {
@@ -60,7 +61,14 @@ namespace Ksu.Cis300.Prefixes
         /// <param name="e">Information about the event.</param>
         private void LookUpClick(object sender, EventArgs e)
         {
-
+            uxCompletions.Items.Clear();
+            ITrie? completions = _words.GetCompletions(uxPrefix.Text);
+            if (completions != null)
+            {
+                uxCompletions.BeginUpdate();
+                completions.AddAll(new StringBuilder(uxPrefix.Text), uxCompletions.Items);
+                uxCompletions.EndUpdate();
+            }
         }
     }
 }

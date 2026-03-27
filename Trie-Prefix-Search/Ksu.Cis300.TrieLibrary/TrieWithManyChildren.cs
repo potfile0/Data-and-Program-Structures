@@ -1,6 +1,12 @@
 /* Trie.cs
  * Author: Josh Weese
  */
+using System;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Ksu.Cis300.TrieLibrary
 {
     /// <summary>
@@ -41,6 +47,43 @@ namespace Ksu.Cis300.TrieLibrary
             _hasEmpty = hasEmpty;
             _children[childLabel - ITrie.AlphabetStart] = child;
             Add(s);
+        }
+
+        /// <summary>
+        /// Method that gets all of the strings that form words in this trie when appended to the given prefix.
+        /// </summary>
+        /// <param name="prefix"> the prefix to get completion for</param>
+        /// <returns>A trie containing all of the strings that form words in this trie when appended
+        /// to the given prefix. </returns>
+        /// <exception cref="ArgumentNullException">Argument to throw if the prefix is null</exception>
+        public ITrie? GetCompletions(string prefix)
+        {
+            if (prefix == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (prefix == "")
+            {
+                return this;
+            }
+            else
+            {
+                int loc = prefix[0] - ITrie.AlphabetStart;
+
+                if (loc < 0 || loc >= ITrie.AlphabetSize)
+                {
+                    return null;
+                }
+
+                ITrie? child = _children[loc];
+
+                if (child == null)
+                {
+                    return null;
+                }
+
+                return child.GetCompletions(prefix.Substring(1));
+            }
         }
 
         /// <summary>
@@ -107,6 +150,39 @@ namespace Ksu.Cis300.TrieLibrary
                 _children[loc] = child.Add(s.Substring(1));
             }
             return this;
+        }
+
+        /// <summary>
+        /// Adds all of the strings in this trie alphabetically to the end of the given list, with each
+        /// string prefixed by the given prefix.
+        /// </summary>
+        /// <param name="prefix">The prefix.</param>
+        /// <param name="list">The list to which the strings are to be added.</param>
+        public void AddAll(StringBuilder prefix, IList list)
+        {
+            if (prefix == null || list == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (_hasEmpty)
+            {
+                list.Add(prefix.ToString());
+            }
+
+            for (int i = 0; i < ITrie.AlphabetSize; i++)
+            {
+                ITrie? child = _children[i];
+
+                if (child != null)
+                {
+                    char c = (char)(ITrie.AlphabetStart + i);
+
+                    prefix.Append(c);
+                    child.AddAll(prefix, list);
+                    prefix.Length--; 
+                }
+            }
         }
     }
 }

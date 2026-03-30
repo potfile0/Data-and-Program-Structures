@@ -2,6 +2,7 @@
  * Author: Josh Weese
  */
 
+using Ksu.Cis300.TrieLibrary;
 using System.Collections;
 using System.Text;
 
@@ -30,7 +31,7 @@ namespace Ksu.Cis300.Boggle
         /// <summary>
         /// The font to use for the dice.
         /// </summary>
-        private readonly Font _diceFont = new(FontFamily.GenericSansSerif, _fontSize, 
+        private readonly Font _diceFont = new(FontFamily.GenericSansSerif, _fontSize,
             GraphicsUnit.Pixel);
 
         /// <summary>
@@ -165,6 +166,24 @@ namespace Ksu.Cis300.Boggle
                 MessageBox.Show(ex.ToString());
                 Application.Exit();
             }
+        }
+
+        /// <summary>
+        /// Event handler for "Find Words" button
+        /// </summary>
+        /// <param name="sender">The object signaling the event</param>
+        /// <param name="e">Information about the event</param>
+        private void uxFindWords_Click(object sender, EventArgs e)
+        {
+            WordList wl = new();
+            IList words = wl.List;
+            if (_wordFinder != null)
+            {
+                ITrie results = _wordFinder.GetAllWords();
+                results.AddAll(new StringBuilder(), words);
+            }
+            wl.Text = words.Count + " Words";
+            wl.ShowDialog();
         }
     }
 }

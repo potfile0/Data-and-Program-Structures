@@ -28,67 +28,69 @@ namespace Ksu.Cis300.Boggle
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxMenuBar = new System.Windows.Forms.MenuStrip();
-            this.uxNewBoard = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxFindWords = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxBoard = new System.Windows.Forms.FlowLayoutPanel();
-            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxMenuBar.SuspendLayout();
-            this.SuspendLayout();
+            uxMenuBar = new MenuStrip();
+            uxNewBoard = new ToolStripMenuItem();
+            uxFindWords = new ToolStripMenuItem();
+            uxBoard = new FlowLayoutPanel();
+            uxOpenDialog = new OpenFileDialog();
+            uxMenuBar.SuspendLayout();
+            SuspendLayout();
             // 
             // uxMenuBar
             // 
-            this.uxMenuBar.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxNewBoard,
-            this.uxFindWords});
-            this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuBar.Name = "uxMenuBar";
-            this.uxMenuBar.Size = new System.Drawing.Size(800, 33);
-            this.uxMenuBar.TabIndex = 0;
-            this.uxMenuBar.Text = "menuStrip1";
+            uxMenuBar.ImageScalingSize = new Size(24, 24);
+            uxMenuBar.Items.AddRange(new ToolStripItem[] { uxNewBoard, uxFindWords });
+            uxMenuBar.Location = new Point(0, 0);
+            uxMenuBar.Name = "uxMenuBar";
+            uxMenuBar.Padding = new Padding(4, 1, 0, 1);
+            uxMenuBar.Size = new Size(560, 24);
+            uxMenuBar.TabIndex = 0;
+            uxMenuBar.Text = "menuStrip1";
             // 
             // uxNewBoard
             // 
-            this.uxNewBoard.Name = "uxNewBoard";
-            this.uxNewBoard.Size = new System.Drawing.Size(115, 29);
-            this.uxNewBoard.Text = "New Board";
-            this.uxNewBoard.Click += new System.EventHandler(this.NewBoardClick);
+            uxNewBoard.Name = "uxNewBoard";
+            uxNewBoard.Size = new Size(77, 22);
+            uxNewBoard.Text = "New Board";
+            uxNewBoard.Click += NewBoardClick;
             // 
             // uxFindWords
             // 
-            this.uxFindWords.Name = "uxFindWords";
-            this.uxFindWords.Size = new System.Drawing.Size(119, 29);
-            this.uxFindWords.Text = "Find Words";
+            uxFindWords.Name = "uxFindWords";
+            uxFindWords.Size = new Size(79, 22);
+            uxFindWords.Text = "Find Words";
+            uxFindWords.Click += uxFindWords_Click;
             // 
             // uxBoard
             // 
-            this.uxBoard.Location = new System.Drawing.Point(12, 36);
-            this.uxBoard.Name = "uxBoard";
-            this.uxBoard.Size = new System.Drawing.Size(300, 150);
-            this.uxBoard.TabIndex = 1;
+            uxBoard.Location = new Point(8, 22);
+            uxBoard.Margin = new Padding(2, 2, 2, 2);
+            uxBoard.Name = "uxBoard";
+            uxBoard.Size = new Size(210, 90);
+            uxBoard.TabIndex = 1;
             // 
             // uxOpenDialog
             // 
-            this.uxOpenDialog.Title = "Select Word List File";
+            uxOpenDialog.Title = "Select Word List File";
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uxBoard);
-            this.Controls.Add(this.uxMenuBar);
-            this.MainMenuStrip = this.uxMenuBar;
-            this.MaximizeBox = false;
-            this.Name = "UserInterface";
-            this.Text = "Boggle Deluxe";
-            this.uxMenuBar.ResumeLayout(false);
-            this.uxMenuBar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(560, 270);
+            Controls.Add(uxBoard);
+            Controls.Add(uxMenuBar);
+            MainMenuStrip = uxMenuBar;
+            Margin = new Padding(2, 2, 2, 2);
+            MaximizeBox = false;
+            Name = "UserInterface";
+            Text = "Boggle Deluxe";
+            uxMenuBar.ResumeLayout(false);
+            uxMenuBar.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

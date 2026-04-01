@@ -27,4 +27,10 @@
     <ProjectReference Include="..\Ksu.Cis300.PriorityQueueLibrary\Ksu.Cis300.PriorityQueueLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="KansasStateUniversity.TreeViewer2">
+      <HintPath>..\Ksu.Cis300.PriorityQueueLibrary\KansasStateUniversity.TreeViewer2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

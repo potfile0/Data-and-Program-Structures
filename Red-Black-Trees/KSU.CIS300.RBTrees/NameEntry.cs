@@ -64,7 +64,7 @@ namespace KSU.CIS300.RBTrees
         /// Compares given name entry as a generic object
         /// </summary>
         /// <param name="entry">given value</param>
-        /// <returns>-1, 0, 1</returns>
+        /// <returns> -1, 0, 1 </returns>
         public int CompareTo(object obj)
         {
             if (obj == null || !(obj is NameEntry))

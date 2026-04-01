@@ -28,119 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxTextBox_Name = new System.Windows.Forms.TextBox();
-            this.uxButton_LookupName = new System.Windows.Forms.Button();
-            this.uxLabel_Rank = new System.Windows.Forms.Label();
-            this.uxLabel_Freq = new System.Windows.Forms.Label();
-            this.uxButton_LoadNames = new System.Windows.Forms.Button();
-            this.uxTextBox_Rank = new System.Windows.Forms.TextBox();
-            this.uxTextBox_Freq = new System.Windows.Forms.TextBox();
-            this.uxOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxButton_RemoveName = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            uxTextBox_Name = new System.Windows.Forms.TextBox();
+            uxButton_LookupName = new System.Windows.Forms.Button();
+            uxLabel_Rank = new System.Windows.Forms.Label();
+            uxLabel_Freq = new System.Windows.Forms.Label();
+            uxButton_LoadNames = new System.Windows.Forms.Button();
+            uxTextBox_Rank = new System.Windows.Forms.TextBox();
+            uxTextBox_Freq = new System.Windows.Forms.TextBox();
+            uxOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            uxButton_RemoveName = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // uxTextBox_Name
             // 
-            this.uxTextBox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTextBox_Name.Location = new System.Drawing.Point(8, 53);
-            this.uxTextBox_Name.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.uxTextBox_Name.Name = "uxTextBox_Name";
-            this.uxTextBox_Name.Size = new System.Drawing.Size(283, 29);
-            this.uxTextBox_Name.TabIndex = 3;
+            uxTextBox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxTextBox_Name.Location = new System.Drawing.Point(9, 61);
+            uxTextBox_Name.Margin = new System.Windows.Forms.Padding(1);
+            uxTextBox_Name.Name = "uxTextBox_Name";
+            uxTextBox_Name.Size = new System.Drawing.Size(330, 29);
+            uxTextBox_Name.TabIndex = 3;
             // 
             // uxButton_LookupName
             // 
-            this.uxButton_LookupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxButton_LookupName.Location = new System.Drawing.Point(8, 84);
-            this.uxButton_LookupName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.uxButton_LookupName.Name = "uxButton_LookupName";
-            this.uxButton_LookupName.Size = new System.Drawing.Size(282, 39);
-            this.uxButton_LookupName.TabIndex = 4;
-            this.uxButton_LookupName.Text = "Lookup Name";
-            this.uxButton_LookupName.UseVisualStyleBackColor = true;
+            uxButton_LookupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxButton_LookupName.Location = new System.Drawing.Point(9, 97);
+            uxButton_LookupName.Margin = new System.Windows.Forms.Padding(1);
+            uxButton_LookupName.Name = "uxButton_LookupName";
+            uxButton_LookupName.Size = new System.Drawing.Size(329, 45);
+            uxButton_LookupName.TabIndex = 4;
+            uxButton_LookupName.Text = "Lookup Name";
+            uxButton_LookupName.UseVisualStyleBackColor = true;
+            uxButton_LookupName.Click += LookupName_Click;
             // 
             // uxLabel_Rank
             // 
-            this.uxLabel_Rank.AutoSize = true;
-            this.uxLabel_Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxLabel_Rank.Location = new System.Drawing.Point(44, 127);
-            this.uxLabel_Rank.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.uxLabel_Rank.Name = "uxLabel_Rank";
-            this.uxLabel_Rank.Size = new System.Drawing.Size(58, 24);
-            this.uxLabel_Rank.TabIndex = 5;
-            this.uxLabel_Rank.Text = "Rank:";
+            uxLabel_Rank.AutoSize = true;
+            uxLabel_Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxLabel_Rank.Location = new System.Drawing.Point(51, 147);
+            uxLabel_Rank.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            uxLabel_Rank.Name = "uxLabel_Rank";
+            uxLabel_Rank.Size = new System.Drawing.Size(58, 24);
+            uxLabel_Rank.TabIndex = 5;
+            uxLabel_Rank.Text = "Rank:";
             // 
             // uxLabel_Freq
             // 
-            this.uxLabel_Freq.AutoSize = true;
-            this.uxLabel_Freq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxLabel_Freq.Location = new System.Drawing.Point(1, 162);
-            this.uxLabel_Freq.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.uxLabel_Freq.Name = "uxLabel_Freq";
-            this.uxLabel_Freq.Size = new System.Drawing.Size(107, 24);
-            this.uxLabel_Freq.TabIndex = 6;
-            this.uxLabel_Freq.Text = "Frequency:";
+            uxLabel_Freq.AutoSize = true;
+            uxLabel_Freq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxLabel_Freq.Location = new System.Drawing.Point(1, 187);
+            uxLabel_Freq.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            uxLabel_Freq.Name = "uxLabel_Freq";
+            uxLabel_Freq.Size = new System.Drawing.Size(107, 24);
+            uxLabel_Freq.TabIndex = 6;
+            uxLabel_Freq.Text = "Frequency:";
             // 
             // uxButton_LoadNames
             // 
-            this.uxButton_LoadNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxButton_LoadNames.Location = new System.Drawing.Point(8, 10);
-            this.uxButton_LoadNames.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.uxButton_LoadNames.Name = "uxButton_LoadNames";
-            this.uxButton_LoadNames.Size = new System.Drawing.Size(281, 41);
-            this.uxButton_LoadNames.TabIndex = 2;
-            this.uxButton_LoadNames.Text = "Load Names";
-            this.uxButton_LoadNames.UseVisualStyleBackColor = true;
+            uxButton_LoadNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxButton_LoadNames.Location = new System.Drawing.Point(9, 12);
+            uxButton_LoadNames.Margin = new System.Windows.Forms.Padding(1);
+            uxButton_LoadNames.Name = "uxButton_LoadNames";
+            uxButton_LoadNames.Size = new System.Drawing.Size(328, 47);
+            uxButton_LoadNames.TabIndex = 2;
+            uxButton_LoadNames.Text = "Load Names";
+            uxButton_LoadNames.UseVisualStyleBackColor = true;
+            uxButton_LoadNames.Click += LoadNames_Click;
             // 
             // uxTextBox_Rank
             // 
-            this.uxTextBox_Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTextBox_Rank.Location = new System.Drawing.Point(101, 125);
-            this.uxTextBox_Rank.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.uxTextBox_Rank.Name = "uxTextBox_Rank";
-            this.uxTextBox_Rank.ReadOnly = true;
-            this.uxTextBox_Rank.Size = new System.Drawing.Size(187, 29);
-            this.uxTextBox_Rank.TabIndex = 7;
+            uxTextBox_Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxTextBox_Rank.Location = new System.Drawing.Point(118, 144);
+            uxTextBox_Rank.Margin = new System.Windows.Forms.Padding(1);
+            uxTextBox_Rank.Name = "uxTextBox_Rank";
+            uxTextBox_Rank.ReadOnly = true;
+            uxTextBox_Rank.Size = new System.Drawing.Size(218, 29);
+            uxTextBox_Rank.TabIndex = 7;
             // 
             // uxTextBox_Freq
             // 
-            this.uxTextBox_Freq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTextBox_Freq.Location = new System.Drawing.Point(101, 162);
-            this.uxTextBox_Freq.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.uxTextBox_Freq.Name = "uxTextBox_Freq";
-            this.uxTextBox_Freq.ReadOnly = true;
-            this.uxTextBox_Freq.Size = new System.Drawing.Size(187, 29);
-            this.uxTextBox_Freq.TabIndex = 8;
+            uxTextBox_Freq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxTextBox_Freq.Location = new System.Drawing.Point(118, 187);
+            uxTextBox_Freq.Margin = new System.Windows.Forms.Padding(1);
+            uxTextBox_Freq.Name = "uxTextBox_Freq";
+            uxTextBox_Freq.ReadOnly = true;
+            uxTextBox_Freq.Size = new System.Drawing.Size(218, 29);
+            uxTextBox_Freq.TabIndex = 8;
             // 
             // uxButton_RemoveName
             // 
-            this.uxButton_RemoveName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxButton_RemoveName.Location = new System.Drawing.Point(8, 193);
-            this.uxButton_RemoveName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.uxButton_RemoveName.Name = "uxButton_RemoveName";
-            this.uxButton_RemoveName.Size = new System.Drawing.Size(280, 36);
-            this.uxButton_RemoveName.TabIndex = 9;
-            this.uxButton_RemoveName.Text = "Remove Name";
-            this.uxButton_RemoveName.UseVisualStyleBackColor = true;
+            uxButton_RemoveName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            uxButton_RemoveName.Location = new System.Drawing.Point(9, 223);
+            uxButton_RemoveName.Margin = new System.Windows.Forms.Padding(1);
+            uxButton_RemoveName.Name = "uxButton_RemoveName";
+            uxButton_RemoveName.Size = new System.Drawing.Size(327, 42);
+            uxButton_RemoveName.TabIndex = 9;
+            uxButton_RemoveName.Text = "Remove Name";
+            uxButton_RemoveName.UseVisualStyleBackColor = true;
+            uxButton_RemoveName.Click += RemoveName_Click;
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 234);
-            this.Controls.Add(this.uxButton_RemoveName);
-            this.Controls.Add(this.uxTextBox_Freq);
-            this.Controls.Add(this.uxTextBox_Rank);
-            this.Controls.Add(this.uxLabel_Freq);
-            this.Controls.Add(this.uxLabel_Rank);
-            this.Controls.Add(this.uxButton_LookupName);
-            this.Controls.Add(this.uxTextBox_Name);
-            this.Controls.Add(this.uxButton_LoadNames);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "UserInterface";
-            this.Text = "RBTrees";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(348, 270);
+            Controls.Add(uxButton_RemoveName);
+            Controls.Add(uxTextBox_Freq);
+            Controls.Add(uxTextBox_Rank);
+            Controls.Add(uxLabel_Freq);
+            Controls.Add(uxLabel_Rank);
+            Controls.Add(uxButton_LookupName);
+            Controls.Add(uxTextBox_Name);
+            Controls.Add(uxButton_LoadNames);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "UserInterface";
+            Text = "RBTrees";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

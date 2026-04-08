@@ -71,7 +71,7 @@ namespace Ksu.Cis300.NameLookup
                 try
                 {
                     _nameInformation = ReadFile(uxOpenDialog.FileName);
-                    _nameInformation.Drawing.Show();
+                    MessageBox.Show("File successfully read.");
                 }
                 catch (Exception ex)
                 {
@@ -120,17 +120,6 @@ namespace Ksu.Cis300.NameLookup
         /// <param name="e">Information about the event.</param>
         private void RemoveClick(object sender, EventArgs e)
         {
-            string name = uxName.Text.Trim().ToUpper();
-            if (_nameInformation.Remove(name))
-            {
-                _nameInformation.Drawing.Show();
-            }
-            else
-            {
-                MessageBox.Show("Name not found.");
-            }
-            SetValue(_frequencyIndex, "");
-            SetValue(_rankIndex, "");
         }
 
         /// <summary>
@@ -143,7 +132,6 @@ namespace Ksu.Cis300.NameLookup
             if (uxSaveDialog.ShowDialog() == DialogResult.OK)
             {
                 List<KeyValuePair<string, FrequencyAndRank>> list = new();
-                _nameInformation.CopyTo(list);
                 try
                 {
                     using (StreamWriter output = new(uxSaveDialog.FileName))

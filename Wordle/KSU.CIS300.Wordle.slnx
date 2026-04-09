@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="KSU.CIS300.Wordle.Tests/KSU.CIS300.Wordle.Tests.csproj" Id="1d174796-df37-4794-ba32-40f77224901f" />
+  <Project Path="KSU.CIS300.Wordle/KSU.CIS300.Wordle.csproj" />
+</Solution>

@@ -13,9 +13,34 @@ namespace Ksu.Cis300.DictionaryLibrary
     public class Dictionary<TKey, TValue> where TKey: notnull
     {
         /// <summary>
-        /// The size of the hash table.
+        /// The initial size of the hash table that changes.
         /// </summary>
-        private const int _tableSize = 23;
+        private const int _tableSize = 5;
+
+        /// <summary>
+        /// Pre-computed prime numbers
+        /// </summary>
+        private int[] _tableSizes =
+            {
+                5, 11, 23, 47, 97, 197, 397, 797, 1597, 3203, 6421, 12853, 25717,
+                51437, 102877, 205759, 411527, 823117, 1646237, 3292489, 6584983,
+                13169977, 26339969, 52679969, 105359939, 210719881, 421439783,
+                842879579, 1685759167
+            };
+
+        /// <summary>
+        /// The index of the current table size in _tableSizes.
+        /// </summary>
+        private int _tableSizeIndex = 0;
+        
+        /// <summary>
+        /// property that keeps track of number of keys currently stored
+        /// </summary>
+        public int Count
+        {
+            get;
+            private set;
+        }
 
         /// <summary>
         /// The mask to use when stripping the sign bit.
@@ -115,14 +140,43 @@ namespace Ksu.Cis300.DictionaryLibrary
         }
 
         /// <summary>
-        /// Inserts the given cell into the beginning of the list at the given table location.
+        /// Inserts the given cell into the beginning of the list
+        /// at the given table location.
         /// </summary>
         /// <param name="cell">The cell to insert.</param>
-        /// <param name="loc">The table location in which to insert the cell.</param>
+        /// <param name="loc">The table location.</param>
         private void Insert(LinkedListCell<KeyValuePair<TKey, TValue>> cell, int loc)
         {
             cell.Next = _elements[loc];
             _elements[loc] = cell;
+
+        }
+
+        /// <summary>
+        /// Rehash the table
+        /// </summary>
+        private void Rehash()
+        {
+            LinkedListCell<KeyValuePair<TKey, TValue>>?[] oldElements = _elements;
+
+            _tableSizeIndex++;
+
+            _elements = new LinkedListCell<KeyValuePair<TKey, TValue>>[_tableSizes[_tableSizeIndex]];
+
+            foreach (LinkedListCell<KeyValuePair<TKey, TValue>>? list in oldElements)
+            {
+                LinkedListCell<KeyValuePair<TKey, TValue>>?current = list;
+                while (current != null)
+                {
+                    LinkedListCell<KeyValuePair<TKey, TValue>>? next = current.Next;
+
+                    int newLoc = GetLocation(current.Data.Key);
+
+                    Insert(current, newLoc);
+
+                    current = next;
+                }
+            }
         }
 
         /// <summary>
@@ -137,6 +191,12 @@ namespace Ksu.Cis300.DictionaryLibrary
             KeyValuePair<TKey, TValue> p = new(k, v);
             LinkedListCell<KeyValuePair<TKey, TValue>> cell = new(p, null);
             Insert(cell, loc);
+            Count++;
+
+            if (Count > _elements.Length && _tableSizeIndex < _tableSizes.Length - 1)
+            {
+                Rehash();
+            }
         }
     }
 }

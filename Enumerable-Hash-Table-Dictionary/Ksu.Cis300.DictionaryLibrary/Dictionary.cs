@@ -3,6 +3,7 @@
  */
 using Ksu.Cis300.LinkedListLibrary;
 using System.Runtime.ConstrainedExecution;
+using System.Collections;
 
 namespace Ksu.Cis300.DictionaryLibrary
 {
@@ -11,7 +12,8 @@ namespace Ksu.Cis300.DictionaryLibrary
     /// </summary>
     /// <typeparam name="TKey">The type of the keys.</typeparam>
     /// <typeparam name="TValue">The type of the values.</typeparam>
-    public class Dictionary<TKey, TValue> where TKey: notnull
+    public class Dictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
+        where TKey : notnull
     {
         /// <summary>
         /// The initial size of the hash table.
@@ -49,6 +51,65 @@ namespace Ksu.Cis300.DictionaryLibrary
         /// The number of pairs of keys and values in the dictionary.
         /// </summary>
         public int Count { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the value associated with the given key
+        /// </summary>
+        /// <param name="k">The key to look up or set</param>
+        /// <returns>The value associated with k</returns>
+        public TValue this[TKey k]
+        {
+            get
+            {
+                if (TryGetValue(k, out TValue? v))
+                {
+                    return v!;
+                }
+                throw new KeyNotFoundException();
+            }
+            set
+            {
+                CheckKey(k);
+                int loc = GetLocation(k);
+                LinkedListCell<KeyValuePair<TKey, TValue>>? p = GetCell(k, _elements[loc]);
+                if (p == null)
+                {
+                    Insert(k, value, loc);
+                }
+                else
+                {
+                    p.Data = new KeyValuePair<TKey, TValue>(k, value);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets an IEnumerable for the keys in the dictionary.
+        /// </summary>
+        public IEnumerable<TKey> Keys
+        {
+            get
+            {
+                foreach (KeyValuePair<TKey, TValue> pair in this)
+                {
+                    yield return pair.Key;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets an IEnumerable for the values in the dictionary.
+        /// </summary>
+        public IEnumerable<TValue> Values
+        {
+            get
+            {
+                foreach (KeyValuePair<TKey, TValue> pair in this)
+                {
+                    yield return pair.Value;
+                }
+            }
+        }
 
         /// <summary>
         /// Checks that the given key is not null.
@@ -176,6 +237,32 @@ namespace Ksu.Cis300.DictionaryLibrary
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns an enumerator that iterates through all key value pairs
+        /// </summary>
+        /// <returns>An enumerator for the dictionary</returns>
+        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+        {
+            foreach (LinkedListCell<KeyValuePair<TKey, TValue>>? list in _elements)
+            {
+                LinkedListCell<KeyValuePair<TKey, TValue>>? current = list;
+                while (current != null)
+                {
+                    yield return current.Data;
+                    current = current.Next;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns a non generic enumerator
+        /// </summary>
+        /// <returns>A non generic enumerator</returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

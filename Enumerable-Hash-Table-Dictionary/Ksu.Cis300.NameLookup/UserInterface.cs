@@ -131,12 +131,11 @@ namespace Ksu.Cis300.NameLookup
         {
             if (uxSaveDialog.ShowDialog() == DialogResult.OK)
             {
-                List<KeyValuePair<string, FrequencyAndRank>> list = new();
                 try
                 {
                     using (StreamWriter output = new(uxSaveDialog.FileName))
                     {
-                        foreach (KeyValuePair<string, FrequencyAndRank> pair in list)
+                        foreach (KeyValuePair<string, FrequencyAndRank> pair in _nameInformation)
                         {
                             output.WriteLine(pair.Key);
                             output.WriteLine(pair.Value.Frequency.ToString());

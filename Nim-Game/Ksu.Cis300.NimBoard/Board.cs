@@ -24,6 +24,21 @@ namespace Ksu.Cis300.NimBoard
         public int NumberOfPiles => _piles.Length;
 
         /// <summary>
+        /// a constant giving the multiplier to use for polynomial hashing
+        /// </summary>
+        private const int _multiplier = 37;
+
+        /// <summary>
+        /// The hash code for this board
+        /// </summary>
+        private int _hashCode;
+
+        /// <summary>
+        /// Whether the hash code has been computed
+        /// </summary>
+        private bool _hashCodeComputed;
+
+        /// <summary>
         /// Gets the number of stones on the given pile.
         /// </summary>
         /// <param name="pile">The pile.</param>
@@ -132,7 +147,22 @@ namespace Ksu.Cis300.NimBoard
         /// <returns>The hash code.</returns>
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            if (!_hashCodeComputed)
+            {
+                int hash = 0;
+
+                hash = hash * _multiplier + NumberOfPiles;
+
+                for (int i = 0; i < NumberOfPiles; i++)
+                {
+                    hash = hash * _multiplier + _piles[i];
+                    hash = hash * _multiplier + _limits[i];
+                }
+
+                _hashCode = hash;
+                _hashCodeComputed = true;
+            }
+            return _hashCode;
         }
 
         /// <summary>

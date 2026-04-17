@@ -47,6 +47,11 @@ namespace Ksu.Cis300.Nim
         private Board _currentPosition = new Board(new int[] { }, new int[] { });
 
         /// <summary>
+        /// Stores the best play for each board position already evaluated
+        /// </summary>
+        private Dictionary<Board, Play?> _bestPlays = new();
+
+        /// <summary>
         /// Constructs the GUI.
         /// </summary>
         public UserInterface()
@@ -166,25 +171,34 @@ namespace Ksu.Cis300.Nim
         }
 
         /// <summary>
-        /// Finds a winning play from the given position if there is one.
+        /// Finds a winning play from the given position if there is one
         /// </summary>
-        /// <param name="b">The board position.</param>
-        /// <returns>A winning play, or null if there is no winning play.</returns>
+        /// <param name="b">The board position</param>
+        /// <returns>A winning play, or null if there is no winning play</returns>
         private Play? FindBestPlay(Board b)
         {
-            Play p;
+            if (_bestPlays.TryGetValue(b, out Play? cached))
+            {
+                return cached;
+            }
+
+            Play ?result = null;
             for (int i = 0; i < b.NumberOfPiles; i++)
             {
                 for (int j = 1; j <= b.GetLimit(i); j++)
                 {
-                    p = new Play(i, j);
+                    Play p = new Play(i, j);
                     Board child = b.MakePlay(p);
                     if (FindBestPlay(child) == null)
                     {
-                        return p;
+                        result = p;
+                        _bestPlays[b] = result;
+                        return result;
                     }
                 }
             }
+
+            _bestPlays[b] = null;
             return null;
         }
 

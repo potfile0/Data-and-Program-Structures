@@ -278,5 +278,111 @@ namespace Ksu.Cis300.ShortestPaths
         {
             MessageBox.Show("Node " + node + " not in map.");
         }
+
+        /// <summary>
+        /// to compute the shortest path from u to v in map
+        /// </summary>
+        /// <param name="u">starting</param>
+        /// <param name="v">ending</param>
+        /// <param name="map">map </param>
+        /// <param name="paths">paths</param>
+        /// <returns>decimal computed</returns>
+        private decimal ShortestPath(string u, string v, DirectedGraph<string, decimal> map, out Dictionary<string, string> paths)
+        {
+            paths = new Dictionary<string, string>();
+            MinPriorityQueue<decimal, Edge<string, decimal>> queue = new();
+
+            paths[u] = u;
+            if (u == v)
+            {
+                return 0;
+            }
+
+            foreach (Edge<string, decimal> edge in map.OutgoingEdges(u))
+            {
+                queue.Add(edge.Data, edge);
+            }
+                
+            while (queue.Count > 0)
+            {
+                decimal p = queue.MinPriority;
+                Edge<string, decimal> edge = queue.RemoveMinPriorityElement();
+
+                if (!paths.ContainsKey(edge.Destination))
+                {
+                    paths[edge.Destination] = edge.Source;
+                    if (edge.Destination == v)
+                    {
+                        return p;
+                    }
+
+                    foreach (Edge<string, decimal> next in map.OutgoingEdges(edge.Destination))
+                    {
+                        queue.Add(p + next.Data, next);
+                    }
+                }
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// to add the nodes in the path from u to v in paths to the end of the given list
+        /// </summary>
+        /// <param name="u">starting</param>
+        /// <param name="v">ending</param>
+        /// <param name="paths">paths</param>
+        /// <param name="list">list</param>
+        private void AddPath(string u, string v, Dictionary<string, string> paths, IList list)
+        {
+            Stack<string> stack = new Stack<string>();
+            string current = v;
+
+            while (current != u)
+            {
+                stack.Push(current);
+                current = paths[current];
+            }
+
+            list.Add(u);
+            while (stack.Count > 0)
+            {
+                list.Add(stack.Pop());
+            }
+        }
+
+        /// <summary>
+        /// event handler for the FindShortestPath button
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">args</param>
+        private void uxFindPath_Click(object sender, EventArgs e)
+        {
+            if (!_map.ContainsNode(uxStartNode.Text))
+            {
+                ShowError(uxStartNode.Text);
+            }
+            else if (!_map.ContainsNode(uxEndNode.Text))
+            {
+                ShowError(uxEndNode.Text);
+            }
+            else
+            {
+                Dictionary<string, string> paths;
+                decimal len = Math.Round(ShortestPath(uxStartNode.Text, uxEndNode.Text, _map, out paths), 1);
+                uxNodeList.Items.Clear();
+                if (len < 0)
+                {
+                    uxDistance.Text = "";
+                    MessageBox.Show("No path found.");
+                }
+                else
+                {
+                    uxDistance.Text = len + _distanceUnit;
+                    uxNodeList.BeginUpdate();
+                    AddPath(uxStartNode.Text, uxEndNode.Text, paths, uxNodeList.Items);
+                    uxNodeList.EndUpdate();
+                }
+            }
+        }
     }
 }

@@ -28,295 +28,301 @@ namespace Ksu.Cis300.ShortestPaths
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxMenuBar = new System.Windows.Forms.MenuStrip();
-            this.uxTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxLoad = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxEntireMap = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.uxControlPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.uxStartLabel = new System.Windows.Forms.Label();
-            this.uxStartNodePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.uxStartNode = new System.Windows.Forms.TextBox();
-            this.uxSetStart = new System.Windows.Forms.Button();
-            this.uxEndLabel = new System.Windows.Forms.Label();
-            this.uxEndingNodePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.uxEndNode = new System.Windows.Forms.TextBox();
-            this.uxSetEnd = new System.Windows.Forms.Button();
-            this.uxFindPath = new System.Windows.Forms.Button();
-            this.uxDistanceLabel = new System.Windows.Forms.Label();
-            this.uxDistance = new System.Windows.Forms.TextBox();
-            this.uxPathLabel = new System.Windows.Forms.Label();
-            this.uxNodeList = new System.Windows.Forms.ListBox();
-            this.uxMap = new CefSharp.WinForms.ChromiumWebBrowser();
-            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxMenuBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uxSplitContainer)).BeginInit();
-            this.uxSplitContainer.Panel1.SuspendLayout();
-            this.uxSplitContainer.Panel2.SuspendLayout();
-            this.uxSplitContainer.SuspendLayout();
-            this.uxControlPanel.SuspendLayout();
-            this.uxStartNodePanel.SuspendLayout();
-            this.uxEndingNodePanel.SuspendLayout();
-            this.SuspendLayout();
+            uxMenuBar = new MenuStrip();
+            uxTools = new ToolStripMenuItem();
+            uxLoad = new ToolStripMenuItem();
+            uxEntireMap = new ToolStripMenuItem();
+            uxSplitContainer = new SplitContainer();
+            uxControlPanel = new FlowLayoutPanel();
+            uxStartLabel = new Label();
+            uxStartNodePanel = new FlowLayoutPanel();
+            uxStartNode = new TextBox();
+            uxSetStart = new Button();
+            uxEndLabel = new Label();
+            uxEndingNodePanel = new FlowLayoutPanel();
+            uxEndNode = new TextBox();
+            uxSetEnd = new Button();
+            uxFindPath = new Button();
+            uxDistanceLabel = new Label();
+            uxDistance = new TextBox();
+            uxPathLabel = new Label();
+            uxNodeList = new ListBox();
+            uxMap = new CefSharp.WinForms.ChromiumWebBrowser();
+            uxOpenDialog = new OpenFileDialog();
+            uxMenuBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)uxSplitContainer).BeginInit();
+            uxSplitContainer.Panel1.SuspendLayout();
+            uxSplitContainer.Panel2.SuspendLayout();
+            uxSplitContainer.SuspendLayout();
+            uxControlPanel.SuspendLayout();
+            uxStartNodePanel.SuspendLayout();
+            uxEndingNodePanel.SuspendLayout();
+            SuspendLayout();
             // 
             // uxMenuBar
             // 
-            this.uxMenuBar.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxTools});
-            this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuBar.Name = "uxMenuBar";
-            this.uxMenuBar.Size = new System.Drawing.Size(1671, 33);
-            this.uxMenuBar.TabIndex = 0;
-            this.uxMenuBar.Text = "menuStrip1";
+            uxMenuBar.ImageScalingSize = new Size(24, 24);
+            uxMenuBar.Items.AddRange(new ToolStripItem[] { uxTools });
+            uxMenuBar.Location = new Point(0, 0);
+            uxMenuBar.Name = "uxMenuBar";
+            uxMenuBar.Padding = new Padding(4, 1, 0, 1);
+            uxMenuBar.Size = new Size(1170, 24);
+            uxMenuBar.TabIndex = 0;
+            uxMenuBar.Text = "menuStrip1";
             // 
             // uxTools
             // 
-            this.uxTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxLoad,
-            this.uxEntireMap});
-            this.uxTools.Name = "uxTools";
-            this.uxTools.Size = new System.Drawing.Size(69, 29);
-            this.uxTools.Text = "Tools";
+            uxTools.DropDownItems.AddRange(new ToolStripItem[] { uxLoad, uxEntireMap });
+            uxTools.Name = "uxTools";
+            uxTools.Size = new Size(47, 22);
+            uxTools.Text = "Tools";
             // 
             // uxLoad
             // 
-            this.uxLoad.Name = "uxLoad";
-            this.uxLoad.Size = new System.Drawing.Size(270, 34);
-            this.uxLoad.Text = "Load a map";
-            this.uxLoad.Click += new System.EventHandler(this.LoadClick);
+            uxLoad.Name = "uxLoad";
+            uxLoad.Size = new Size(163, 22);
+            uxLoad.Text = "Load a map";
+            uxLoad.Click += LoadClick;
             // 
             // uxEntireMap
             // 
-            this.uxEntireMap.Enabled = false;
-            this.uxEntireMap.Name = "uxEntireMap";
-            this.uxEntireMap.Size = new System.Drawing.Size(270, 34);
-            this.uxEntireMap.Text = "Show entire map";
-            this.uxEntireMap.Click += new System.EventHandler(this.EntireMapClick);
+            uxEntireMap.Enabled = false;
+            uxEntireMap.Name = "uxEntireMap";
+            uxEntireMap.Size = new Size(163, 22);
+            uxEntireMap.Text = "Show entire map";
+            uxEntireMap.Click += EntireMapClick;
             // 
             // uxSplitContainer
             // 
-            this.uxSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.uxSplitContainer.Location = new System.Drawing.Point(0, 33);
-            this.uxSplitContainer.Name = "uxSplitContainer";
+            uxSplitContainer.Dock = DockStyle.Fill;
+            uxSplitContainer.FixedPanel = FixedPanel.Panel1;
+            uxSplitContainer.Location = new Point(0, 24);
+            uxSplitContainer.Margin = new Padding(2, 2, 2, 2);
+            uxSplitContainer.Name = "uxSplitContainer";
             // 
             // uxSplitContainer.Panel1
             // 
-            this.uxSplitContainer.Panel1.Controls.Add(this.uxControlPanel);
+            uxSplitContainer.Panel1.Controls.Add(uxControlPanel);
             // 
             // uxSplitContainer.Panel2
             // 
-            this.uxSplitContainer.Panel2.Controls.Add(this.uxMap);
-            this.uxSplitContainer.Size = new System.Drawing.Size(1671, 910);
-            this.uxSplitContainer.SplitterDistance = 500;
-            this.uxSplitContainer.SplitterWidth = 6;
-            this.uxSplitContainer.TabIndex = 1;
+            uxSplitContainer.Panel2.Controls.Add(uxMap);
+            uxSplitContainer.Size = new Size(1170, 542);
+            uxSplitContainer.SplitterDistance = 350;
+            uxSplitContainer.TabIndex = 1;
             // 
             // uxControlPanel
             // 
-            this.uxControlPanel.AutoScroll = true;
-            this.uxControlPanel.Controls.Add(this.uxStartLabel);
-            this.uxControlPanel.Controls.Add(this.uxStartNodePanel);
-            this.uxControlPanel.Controls.Add(this.uxEndLabel);
-            this.uxControlPanel.Controls.Add(this.uxEndingNodePanel);
-            this.uxControlPanel.Controls.Add(this.uxFindPath);
-            this.uxControlPanel.Controls.Add(this.uxDistanceLabel);
-            this.uxControlPanel.Controls.Add(this.uxDistance);
-            this.uxControlPanel.Controls.Add(this.uxPathLabel);
-            this.uxControlPanel.Controls.Add(this.uxNodeList);
-            this.uxControlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxControlPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.uxControlPanel.Location = new System.Drawing.Point(0, 0);
-            this.uxControlPanel.Name = "uxControlPanel";
-            this.uxControlPanel.Size = new System.Drawing.Size(500, 910);
-            this.uxControlPanel.TabIndex = 0;
-            this.uxControlPanel.WrapContents = false;
+            uxControlPanel.AutoScroll = true;
+            uxControlPanel.Controls.Add(uxStartLabel);
+            uxControlPanel.Controls.Add(uxStartNodePanel);
+            uxControlPanel.Controls.Add(uxEndLabel);
+            uxControlPanel.Controls.Add(uxEndingNodePanel);
+            uxControlPanel.Controls.Add(uxFindPath);
+            uxControlPanel.Controls.Add(uxDistanceLabel);
+            uxControlPanel.Controls.Add(uxDistance);
+            uxControlPanel.Controls.Add(uxPathLabel);
+            uxControlPanel.Controls.Add(uxNodeList);
+            uxControlPanel.Dock = DockStyle.Fill;
+            uxControlPanel.FlowDirection = FlowDirection.TopDown;
+            uxControlPanel.Location = new Point(0, 0);
+            uxControlPanel.Margin = new Padding(2, 2, 2, 2);
+            uxControlPanel.Name = "uxControlPanel";
+            uxControlPanel.Size = new Size(350, 542);
+            uxControlPanel.TabIndex = 0;
+            uxControlPanel.WrapContents = false;
             // 
             // uxStartLabel
             // 
-            this.uxStartLabel.AutoSize = true;
-            this.uxStartLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxStartLabel.Location = new System.Drawing.Point(3, 20);
-            this.uxStartLabel.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.uxStartLabel.Name = "uxStartLabel";
-            this.uxStartLabel.Size = new System.Drawing.Size(167, 32);
-            this.uxStartLabel.TabIndex = 0;
-            this.uxStartLabel.Text = "Starting Node:";
+            uxStartLabel.AutoSize = true;
+            uxStartLabel.Font = new Font("Segoe UI", 12F);
+            uxStartLabel.Location = new Point(2, 12);
+            uxStartLabel.Margin = new Padding(2, 12, 2, 0);
+            uxStartLabel.Name = "uxStartLabel";
+            uxStartLabel.Size = new Size(109, 21);
+            uxStartLabel.TabIndex = 0;
+            uxStartLabel.Text = "Starting Node:";
             // 
             // uxStartNodePanel
             // 
-            this.uxStartNodePanel.AutoSize = true;
-            this.uxStartNodePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uxStartNodePanel.Controls.Add(this.uxStartNode);
-            this.uxStartNodePanel.Controls.Add(this.uxSetStart);
-            this.uxStartNodePanel.Location = new System.Drawing.Point(3, 55);
-            this.uxStartNodePanel.Name = "uxStartNodePanel";
-            this.uxStartNodePanel.Size = new System.Drawing.Size(387, 45);
-            this.uxStartNodePanel.TabIndex = 1;
-            this.uxStartNodePanel.WrapContents = false;
+            uxStartNodePanel.AutoSize = true;
+            uxStartNodePanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            uxStartNodePanel.Controls.Add(uxStartNode);
+            uxStartNodePanel.Controls.Add(uxSetStart);
+            uxStartNodePanel.Location = new Point(2, 35);
+            uxStartNodePanel.Margin = new Padding(2, 2, 2, 2);
+            uxStartNodePanel.Name = "uxStartNodePanel";
+            uxStartNodePanel.Size = new Size(272, 33);
+            uxStartNodePanel.TabIndex = 1;
+            uxStartNodePanel.WrapContents = false;
             // 
             // uxStartNode
             // 
-            this.uxStartNode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxStartNode.Location = new System.Drawing.Point(30, 3);
-            this.uxStartNode.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.uxStartNode.Name = "uxStartNode";
-            this.uxStartNode.Size = new System.Drawing.Size(278, 39);
-            this.uxStartNode.TabIndex = 2;
-            this.uxStartNode.TextChanged += new System.EventHandler(this.StartNodeTextChanged);
+            uxStartNode.Font = new Font("Segoe UI", 12F);
+            uxStartNode.Location = new Point(21, 2);
+            uxStartNode.Margin = new Padding(21, 2, 2, 2);
+            uxStartNode.Name = "uxStartNode";
+            uxStartNode.Size = new Size(196, 29);
+            uxStartNode.TabIndex = 2;
+            uxStartNode.TextChanged += StartNodeTextChanged;
             // 
             // uxSetStart
             // 
-            this.uxSetStart.Enabled = false;
-            this.uxSetStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxSetStart.Location = new System.Drawing.Point(314, 3);
-            this.uxSetStart.Name = "uxSetStart";
-            this.uxSetStart.Size = new System.Drawing.Size(70, 39);
-            this.uxSetStart.TabIndex = 3;
-            this.uxSetStart.Text = "<";
-            this.uxSetStart.UseVisualStyleBackColor = true;
-            this.uxSetStart.Click += new System.EventHandler(this.SetStartClick);
+            uxSetStart.Enabled = false;
+            uxSetStart.Font = new Font("Segoe UI", 12F);
+            uxSetStart.Location = new Point(221, 2);
+            uxSetStart.Margin = new Padding(2, 2, 2, 2);
+            uxSetStart.Name = "uxSetStart";
+            uxSetStart.Size = new Size(49, 23);
+            uxSetStart.TabIndex = 3;
+            uxSetStart.Text = "<";
+            uxSetStart.UseVisualStyleBackColor = true;
+            uxSetStart.Click += SetStartClick;
             // 
             // uxEndLabel
             // 
-            this.uxEndLabel.AutoSize = true;
-            this.uxEndLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxEndLabel.Location = new System.Drawing.Point(3, 123);
-            this.uxEndLabel.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.uxEndLabel.Name = "uxEndLabel";
-            this.uxEndLabel.Size = new System.Drawing.Size(159, 32);
-            this.uxEndLabel.TabIndex = 2;
-            this.uxEndLabel.Text = "Ending Node:";
+            uxEndLabel.AutoSize = true;
+            uxEndLabel.Font = new Font("Segoe UI", 12F);
+            uxEndLabel.Location = new Point(2, 82);
+            uxEndLabel.Margin = new Padding(2, 12, 2, 0);
+            uxEndLabel.Name = "uxEndLabel";
+            uxEndLabel.Size = new Size(103, 21);
+            uxEndLabel.TabIndex = 2;
+            uxEndLabel.Text = "Ending Node:";
             // 
             // uxEndingNodePanel
             // 
-            this.uxEndingNodePanel.AutoSize = true;
-            this.uxEndingNodePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uxEndingNodePanel.Controls.Add(this.uxEndNode);
-            this.uxEndingNodePanel.Controls.Add(this.uxSetEnd);
-            this.uxEndingNodePanel.Location = new System.Drawing.Point(3, 158);
-            this.uxEndingNodePanel.Name = "uxEndingNodePanel";
-            this.uxEndingNodePanel.Size = new System.Drawing.Size(387, 45);
-            this.uxEndingNodePanel.TabIndex = 3;
-            this.uxEndingNodePanel.WrapContents = false;
+            uxEndingNodePanel.AutoSize = true;
+            uxEndingNodePanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            uxEndingNodePanel.Controls.Add(uxEndNode);
+            uxEndingNodePanel.Controls.Add(uxSetEnd);
+            uxEndingNodePanel.Location = new Point(2, 105);
+            uxEndingNodePanel.Margin = new Padding(2, 2, 2, 2);
+            uxEndingNodePanel.Name = "uxEndingNodePanel";
+            uxEndingNodePanel.Size = new Size(272, 33);
+            uxEndingNodePanel.TabIndex = 3;
+            uxEndingNodePanel.WrapContents = false;
             // 
             // uxEndNode
             // 
-            this.uxEndNode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxEndNode.Location = new System.Drawing.Point(30, 3);
-            this.uxEndNode.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.uxEndNode.Name = "uxEndNode";
-            this.uxEndNode.Size = new System.Drawing.Size(278, 39);
-            this.uxEndNode.TabIndex = 2;
-            this.uxEndNode.TextChanged += new System.EventHandler(this.EndNodeTextChanged);
+            uxEndNode.Font = new Font("Segoe UI", 12F);
+            uxEndNode.Location = new Point(21, 2);
+            uxEndNode.Margin = new Padding(21, 2, 2, 2);
+            uxEndNode.Name = "uxEndNode";
+            uxEndNode.Size = new Size(196, 29);
+            uxEndNode.TabIndex = 2;
+            uxEndNode.TextChanged += EndNodeTextChanged;
             // 
             // uxSetEnd
             // 
-            this.uxSetEnd.Enabled = false;
-            this.uxSetEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxSetEnd.Location = new System.Drawing.Point(314, 3);
-            this.uxSetEnd.Name = "uxSetEnd";
-            this.uxSetEnd.Size = new System.Drawing.Size(70, 39);
-            this.uxSetEnd.TabIndex = 3;
-            this.uxSetEnd.Text = "<";
-            this.uxSetEnd.UseVisualStyleBackColor = true;
-            this.uxSetEnd.Click += new System.EventHandler(this.SetEndClick);
+            uxSetEnd.Enabled = false;
+            uxSetEnd.Font = new Font("Segoe UI", 12F);
+            uxSetEnd.Location = new Point(221, 2);
+            uxSetEnd.Margin = new Padding(2, 2, 2, 2);
+            uxSetEnd.Name = "uxSetEnd";
+            uxSetEnd.Size = new Size(49, 23);
+            uxSetEnd.TabIndex = 3;
+            uxSetEnd.Text = "<";
+            uxSetEnd.UseVisualStyleBackColor = true;
+            uxSetEnd.Click += SetEndClick;
             // 
             // uxFindPath
             // 
-            this.uxFindPath.Enabled = false;
-            this.uxFindPath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxFindPath.Location = new System.Drawing.Point(3, 236);
-            this.uxFindPath.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.uxFindPath.Name = "uxFindPath";
-            this.uxFindPath.Size = new System.Drawing.Size(387, 52);
-            this.uxFindPath.TabIndex = 4;
-            this.uxFindPath.Text = "Find Shortest Path";
-            this.uxFindPath.UseVisualStyleBackColor = true;
+            uxFindPath.Enabled = false;
+            uxFindPath.Font = new Font("Segoe UI", 12F);
+            uxFindPath.Location = new Point(2, 158);
+            uxFindPath.Margin = new Padding(2, 18, 2, 2);
+            uxFindPath.Name = "uxFindPath";
+            uxFindPath.Size = new Size(271, 31);
+            uxFindPath.TabIndex = 4;
+            uxFindPath.Text = "Find Shortest Path";
+            uxFindPath.UseVisualStyleBackColor = true;
+            uxFindPath.Click += uxFindPath_Click;
             // 
             // uxDistanceLabel
             // 
-            this.uxDistanceLabel.AutoSize = true;
-            this.uxDistanceLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxDistanceLabel.Location = new System.Drawing.Point(3, 311);
-            this.uxDistanceLabel.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.uxDistanceLabel.Name = "uxDistanceLabel";
-            this.uxDistanceLabel.Size = new System.Drawing.Size(110, 32);
-            this.uxDistanceLabel.TabIndex = 5;
-            this.uxDistanceLabel.Text = "Distance:";
+            uxDistanceLabel.AutoSize = true;
+            uxDistanceLabel.Font = new Font("Segoe UI", 12F);
+            uxDistanceLabel.Location = new Point(2, 203);
+            uxDistanceLabel.Margin = new Padding(2, 12, 2, 0);
+            uxDistanceLabel.Name = "uxDistanceLabel";
+            uxDistanceLabel.Size = new Size(72, 21);
+            uxDistanceLabel.TabIndex = 5;
+            uxDistanceLabel.Text = "Distance:";
             // 
             // uxDistance
             // 
-            this.uxDistance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxDistance.Location = new System.Drawing.Point(30, 346);
-            this.uxDistance.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.uxDistance.Name = "uxDistance";
-            this.uxDistance.ReadOnly = true;
-            this.uxDistance.Size = new System.Drawing.Size(357, 39);
-            this.uxDistance.TabIndex = 6;
+            uxDistance.Font = new Font("Segoe UI", 12F);
+            uxDistance.Location = new Point(21, 226);
+            uxDistance.Margin = new Padding(21, 2, 2, 2);
+            uxDistance.Name = "uxDistance";
+            uxDistance.ReadOnly = true;
+            uxDistance.Size = new Size(251, 29);
+            uxDistance.TabIndex = 6;
             // 
             // uxPathLabel
             // 
-            this.uxPathLabel.AutoSize = true;
-            this.uxPathLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxPathLabel.Location = new System.Drawing.Point(3, 408);
-            this.uxPathLabel.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.uxPathLabel.Name = "uxPathLabel";
-            this.uxPathLabel.Size = new System.Drawing.Size(160, 32);
-            this.uxPathLabel.TabIndex = 7;
-            this.uxPathLabel.Text = "Shortest Path:";
+            uxPathLabel.AutoSize = true;
+            uxPathLabel.Font = new Font("Segoe UI", 12F);
+            uxPathLabel.Location = new Point(2, 269);
+            uxPathLabel.Margin = new Padding(2, 12, 2, 0);
+            uxPathLabel.Name = "uxPathLabel";
+            uxPathLabel.Size = new Size(105, 21);
+            uxPathLabel.TabIndex = 7;
+            uxPathLabel.Text = "Shortest Path:";
             // 
             // uxNodeList
             // 
-            this.uxNodeList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxNodeList.FormattingEnabled = true;
-            this.uxNodeList.ItemHeight = 32;
-            this.uxNodeList.Location = new System.Drawing.Point(30, 443);
-            this.uxNodeList.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.uxNodeList.Name = "uxNodeList";
-            this.uxNodeList.Size = new System.Drawing.Size(360, 260);
-            this.uxNodeList.TabIndex = 8;
-            this.uxNodeList.SelectedIndexChanged += new System.EventHandler(this.NodeListSelectedIndexChanged);
+            uxNodeList.Font = new Font("Segoe UI", 12F);
+            uxNodeList.FormattingEnabled = true;
+            uxNodeList.ItemHeight = 21;
+            uxNodeList.Location = new Point(21, 292);
+            uxNodeList.Margin = new Padding(21, 2, 2, 2);
+            uxNodeList.Name = "uxNodeList";
+            uxNodeList.Size = new Size(253, 151);
+            uxNodeList.TabIndex = 8;
+            uxNodeList.SelectedIndexChanged += NodeListSelectedIndexChanged;
             // 
             // uxMap
             // 
-            this.uxMap.ActivateBrowserOnCreation = false;
-            this.uxMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxMap.Location = new System.Drawing.Point(0, 0);
-            this.uxMap.Name = "uxMap";
-            this.uxMap.Size = new System.Drawing.Size(1165, 910);
-            this.uxMap.TabIndex = 0;
-            this.uxMap.AddressChanged += new System.EventHandler<CefSharp.AddressChangedEventArgs>(this.MapAddressChanged);
+            uxMap.ActivateBrowserOnCreation = false;
+            uxMap.Dock = DockStyle.Fill;
+            uxMap.Location = new Point(0, 0);
+            uxMap.Margin = new Padding(2, 2, 2, 2);
+            uxMap.Name = "uxMap";
+            uxMap.Size = new Size(816, 542);
+            uxMap.TabIndex = 0;
+            uxMap.AddressChanged += MapAddressChanged;
             // 
             // uxOpenDialog
             // 
-            this.uxOpenDialog.Filter = "Comma-separated value files (*.csv)|*.csv";
+            uxOpenDialog.Filter = "Comma-separated value files (*.csv)|*.csv";
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1671, 943);
-            this.Controls.Add(this.uxSplitContainer);
-            this.Controls.Add(this.uxMenuBar);
-            this.MainMenuStrip = this.uxMenuBar;
-            this.Name = "UserInterface";
-            this.Text = "Shortest Path Finder";
-            this.uxMenuBar.ResumeLayout(false);
-            this.uxMenuBar.PerformLayout();
-            this.uxSplitContainer.Panel1.ResumeLayout(false);
-            this.uxSplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.uxSplitContainer)).EndInit();
-            this.uxSplitContainer.ResumeLayout(false);
-            this.uxControlPanel.ResumeLayout(false);
-            this.uxControlPanel.PerformLayout();
-            this.uxStartNodePanel.ResumeLayout(false);
-            this.uxStartNodePanel.PerformLayout();
-            this.uxEndingNodePanel.ResumeLayout(false);
-            this.uxEndingNodePanel.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1170, 566);
+            Controls.Add(uxSplitContainer);
+            Controls.Add(uxMenuBar);
+            MainMenuStrip = uxMenuBar;
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "UserInterface";
+            Text = "Shortest Path Finder";
+            uxMenuBar.ResumeLayout(false);
+            uxMenuBar.PerformLayout();
+            uxSplitContainer.Panel1.ResumeLayout(false);
+            uxSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)uxSplitContainer).EndInit();
+            uxSplitContainer.ResumeLayout(false);
+            uxControlPanel.ResumeLayout(false);
+            uxControlPanel.PerformLayout();
+            uxStartNodePanel.ResumeLayout(false);
+            uxStartNodePanel.PerformLayout();
+            uxEndingNodePanel.ResumeLayout(false);
+            uxEndingNodePanel.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

@@ -1,5 +1,4 @@
-﻿// Author: Josh Weese
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +31,30 @@ namespace KSU.CIS300.Wordle
         /// </summary>
         public bool IsLeaf => Children.Count == 0;
 
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="value">value</param>
+        /// <param name="label">label</param>
+        public DecisionTreeNode(T value, string label = "")
+        {
+            Value = value;
+            Label = label;
+            Children = new List<DecisionTreeNode<T>>();
+        }
+
+        /// <summary>
+        /// creates a new child node, adds it and returnas it
+        /// </summary>
+        /// <param name="value">value to store in new child node</param>
+        /// <param name="label">pattern label for this child, defaults to empty string</param>
+        /// <returns>newly created child node</returns>
+        public DecisionTreeNode<T> AddChild(T value, string label = "")
+        {
+            DecisionTreeNode<T> child = new DecisionTreeNode<T>(value, label);
+            Children.Add(child);
+            return child;
+        }
 
         /// <summary>
         /// Returns all node values in breadth-first order, visiting each level of the tree

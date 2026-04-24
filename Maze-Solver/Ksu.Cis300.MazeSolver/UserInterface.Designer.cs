@@ -28,53 +28,56 @@ namespace Ksu.Cis300.MazeSolver
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxMenuBar = new System.Windows.Forms.MenuStrip();
-            this.uxNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxMaze = new Ksu.Cis300.MazeLibrary.Maze();
-            this.uxMenuBar.SuspendLayout();
-            this.SuspendLayout();
+            uxMenuBar = new MenuStrip();
+            uxNew = new ToolStripMenuItem();
+            uxMaze = new Ksu.Cis300.MazeLibrary.Maze();
+            uxMenuBar.SuspendLayout();
+            SuspendLayout();
             // 
             // uxMenuBar
             // 
-            this.uxMenuBar.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxNew});
-            this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
-            this.uxMenuBar.Name = "uxMenuBar";
-            this.uxMenuBar.Size = new System.Drawing.Size(800, 33);
-            this.uxMenuBar.TabIndex = 0;
-            this.uxMenuBar.Text = "menuStrip1";
+            uxMenuBar.ImageScalingSize = new Size(24, 24);
+            uxMenuBar.Items.AddRange(new ToolStripItem[] { uxNew });
+            uxMenuBar.Location = new Point(0, 0);
+            uxMenuBar.Name = "uxMenuBar";
+            uxMenuBar.Padding = new Padding(4, 1, 0, 1);
+            uxMenuBar.Size = new Size(560, 24);
+            uxMenuBar.TabIndex = 0;
+            uxMenuBar.Text = "menuStrip1";
             // 
             // uxNew
             // 
-            this.uxNew.Name = "uxNew";
-            this.uxNew.Size = new System.Drawing.Size(110, 29);
-            this.uxNew.Text = "New Maze";
-            this.uxNew.Click += new System.EventHandler(this.NewClick);
+            uxNew.Name = "uxNew";
+            uxNew.Size = new Size(74, 22);
+            uxNew.Text = "New Maze";
+            uxNew.Click += NewClick;
             // 
             // uxMaze
             // 
-            this.uxMaze.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uxMaze.Location = new System.Drawing.Point(0, 33);
-            this.uxMaze.Name = "uxMaze";
-            this.uxMaze.PathColor = System.Drawing.SystemColors.Highlight;
-            this.uxMaze.Size = new System.Drawing.Size(800, 417);
-            this.uxMaze.TabIndex = 1;
+            uxMaze.Dock = DockStyle.Fill;
+            uxMaze.Location = new Point(0, 24);
+            uxMaze.Margin = new Padding(1, 1, 1, 1);
+            uxMaze.Name = "uxMaze";
+            uxMaze.PathColor = SystemColors.Highlight;
+            uxMaze.Size = new Size(560, 246);
+            uxMaze.TabIndex = 1;
+            uxMaze.MouseClick += uxMaze_MouseClick;
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uxMaze);
-            this.Controls.Add(this.uxMenuBar);
-            this.MainMenuStrip = this.uxMenuBar;
-            this.Name = "UserInterface";
-            this.Text = "Maze Solver";
-            this.uxMenuBar.ResumeLayout(false);
-            this.uxMenuBar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(560, 270);
+            Controls.Add(uxMaze);
+            Controls.Add(uxMenuBar);
+            MainMenuStrip = uxMenuBar;
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "UserInterface";
+            Text = "Maze Solver";
+            uxMenuBar.ResumeLayout(false);
+            uxMenuBar.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

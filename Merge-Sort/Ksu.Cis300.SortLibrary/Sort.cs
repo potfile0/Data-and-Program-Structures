@@ -68,5 +68,98 @@ namespace Ksu.Cis300.SortLibrary
                 list[j] = temp;
             }
         }
+
+        /// <summary>
+        /// method to merge two adjacent sorted postions of list into a single sorted portion
+        /// </summary>
+        /// <param name="list"> given list </param>
+        /// <param name="start"> where first portion begins</param>
+        /// <param name="len1"> number of elements in first portion </param>
+        /// <param name="len2"> number of elements in second portion </param>
+        private static void Merge(IList<int> list, int start, int len1, int len2)
+        {
+            int[] temp = new int[len1 + len2];
+
+            ///first
+            int i = start;
+
+            ///second
+            int j = start + len1;
+
+            ///temp
+            int k = 0;
+
+            while (i < start + len1 && j < start + len1 + len2)
+            {
+                if (list[i] <= list[j])
+                {
+                    temp[k] = list[i];
+                    i++;
+                }
+                else
+                {
+                    temp[k] = list[j];
+                    j++;
+                }
+                k++;
+            }
+
+            ///copying from 1st portion
+            while (i < start + len1)
+            {
+                temp[k] = list[i];
+                i++;
+                k++;
+            }
+
+            ///second
+            while (j < start + len1 + len2)
+            {
+                temp[k] = list[j];
+                j++;
+                k++;
+            }
+
+            ///temp back
+            for (int m = 0; m < temp.Length; m++)
+            {
+                list[start + m] = temp[m];
+            }
+        }
+
+        /// <summary>
+        /// recursive method to sort a portion of list 
+        /// </summary>
+        /// <param name="list"> the given list</param>
+        /// <param name="start"> where first portion begins </param>
+        /// <param name="len"> elements first portion has </param>
+        private static void MergeSort(IList<int> list, int start, int len)
+        {
+            if (len > 1)
+            {
+                int len1 = len / 2;
+                int len2 = len - len1;
+                MergeSort(list, start, len1);
+                MergeSort(list, start + len1, len2);
+                Merge(list, start, len1, len2);
+            }
+        }
+
+        /// <summary>
+        /// sorts the given list using merge sort
+        /// </summary>
+        /// <param name="list"> the given list</param>
+        /// <exception cref="ArgumentNullException"> list null </exception>
+        public static void MergeSort(IList<int> list)
+        {
+            if(list == null)
+            {
+                throw new ArgumentNullException("list null");
+            }
+            else
+            {
+                MergeSort(list, 0, list.Count);
+            }
+        }
     }
 }

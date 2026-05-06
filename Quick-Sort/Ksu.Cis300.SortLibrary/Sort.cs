@@ -147,5 +147,66 @@ namespace Ksu.Cis300.SortLibrary
             }
             MergeSort(list, 0, list.Count);
         }
+
+        /// <summary>
+        /// sorts specified portion of given list
+        /// </summary>
+        /// <param name="list"> give list </param>
+        /// <param name="start"> the first index </param>
+        /// <param name="len"> the length of portion </param>
+        private static void QuickSort(IList<int> list, int start, int len)
+        {
+            if (len > 1)
+            {
+                int pivot = list[start];
+
+                int afterL = start;
+                int beforeE = start + len - 1;
+                int beforeG = start + len - 1;
+
+                while (afterL <= beforeE)
+                {
+                    int last = list[beforeE];
+
+                    if (last < pivot)
+                    {
+                        Swap(list, beforeE, afterL);
+                        afterL++;
+                    }
+                    else if (last == pivot)
+                    {
+                        beforeE--;
+                    }
+                    else if (last > pivot)
+                    {
+                        Swap(list, beforeE, beforeG);
+                        beforeG--;
+                        beforeE--;
+                    }
+                }
+
+                ///seg L
+                QuickSort(list, start, afterL - start);
+
+                int segG = (start + len - 1) - beforeG;
+                
+                ///seg G
+                QuickSort(list, beforeG + 1, segG);
+             }
+        }
+
+        /// <summary>
+        /// sorts the given list using quicksort
+        /// </summary>
+        /// <param name="list"> Given list </param>
+        /// <exception cref="ArgumentNullException"> list is null</exception>
+        public static void QuickSort(IList<int> list)
+        {
+            if (list == null)
+            {
+                throw new ArgumentNullException();
+            }
+            QuickSort(list, 0, list.Count);
+        }
     }
 }

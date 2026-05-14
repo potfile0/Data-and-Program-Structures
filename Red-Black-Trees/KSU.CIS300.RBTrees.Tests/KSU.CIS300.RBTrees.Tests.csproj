@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>KSU.CIS300.RBTrees.Tests</AssemblyTitle>
+    <Product>KSU.CIS300.RBTrees.Tests</Product>
+    <Copyright>Copyright ©  2018</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KSU.CIS300.RBTrees\KSU.CIS300.RBTrees.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="KansasStateUniversity.TreeViewer2">
+      <HintPath>..\KansasStateUniversity.TreeViewer2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ksu.Cis300.ShortestPaths", "Ksu.Cis300.ShortestPaths\Ksu.Cis300.ShortestPaths.csproj", "{4085A289-626C-4887-B04B-63FE8CB838FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ksu.Cis300.PriorityQueueLibrary", "Ksu.Cis300.PriorityQueueLibrary\Ksu.Cis300.PriorityQueueLibrary.csproj", "{4388769B-4DAA-45BE-A9EC-C96232A6A76D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4085A289-626C-4887-B04B-63FE8CB838FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4085A289-626C-4887-B04B-63FE8CB838FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4085A289-626C-4887-B04B-63FE8CB838FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4085A289-626C-4887-B04B-63FE8CB838FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4388769B-4DAA-45BE-A9EC-C96232A6A76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4388769B-4DAA-45BE-A9EC-C96232A6A76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4388769B-4DAA-45BE-A9EC-C96232A6A76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4388769B-4DAA-45BE-A9EC-C96232A6A76D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE2CFF2A-5769-4DB5-A961-99D9CAFF90D1}
+	EndGlobalSection
+EndGlobal

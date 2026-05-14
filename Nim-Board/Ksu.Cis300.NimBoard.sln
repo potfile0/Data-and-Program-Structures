@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ksu.Cis300.NimBoard", "Ksu.Cis300.NimBoard\Ksu.Cis300.NimBoard.csproj", "{5265DABB-ADD7-4D07-BE0D-EA2B53C415B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ksu.Cis300.NimBoard.Tests", "Ksu.Cis300.NimBoard.Tests\Ksu.Cis300.NimBoard.Tests.csproj", "{0E18A492-280A-4498-AEF9-90D8E67C4312}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5265DABB-ADD7-4D07-BE0D-EA2B53C415B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5265DABB-ADD7-4D07-BE0D-EA2B53C415B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5265DABB-ADD7-4D07-BE0D-EA2B53C415B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5265DABB-ADD7-4D07-BE0D-EA2B53C415B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E18A492-280A-4498-AEF9-90D8E67C4312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E18A492-280A-4498-AEF9-90D8E67C4312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E18A492-280A-4498-AEF9-90D8E67C4312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E18A492-280A-4498-AEF9-90D8E67C4312}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74EA9684-D984-4A28-B1A7-323632E6E0E7}
+	EndGlobalSection
+EndGlobal
